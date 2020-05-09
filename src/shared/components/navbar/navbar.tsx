@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 import './navbar.scss';
+import { Grid } from '@material-ui/core';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -43,14 +44,17 @@ export default function Navbar(): any {
   return (
     <div className='left'>
       <AppBar position="fixed" color="transparent">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-        >
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
-          <Tab label="Item Three" />
-        </Tabs>
+        <Grid container alignItems="flex-start" justify="flex-end" direction="row">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+          // centered
+          >
+            <Tab label="Item One" />
+            <Tab label="Item Two" />
+            <Tab label="Item Three" />
+          </Tabs>
+        </Grid>
       </AppBar>
       <TabPanel value={value} index={0}>
         <div>Tests Comp</div>
