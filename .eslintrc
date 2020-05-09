@@ -59,6 +59,7 @@
       "react/jsx-one-expression-per-line": "off",
       "react/jsx-wrap-multilines": "off",
       "react/destructuring-assignment": "off",
-      "import/extensions": 0
+      "import/extensions": 0,
+      "react/jsx-fragments": 0
     }
   }

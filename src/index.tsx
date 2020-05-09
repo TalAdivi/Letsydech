@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import './index.scss';
 import Home from './pages/home/home';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <React.Fragment>
+      <CssBaseline />
+      <Home />
+    </React.Fragment>
   </React.StrictMode>,
   document.getElementById('root')
 );
