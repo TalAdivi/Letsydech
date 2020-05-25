@@ -7,8 +7,8 @@ import Banner from './banner';
 import Cards from './cards';
 
 const Home = (): any => {
-  const cards: Array<{icon:string, text:string}> = [{icon:'', text:'Test'}, {icon:'', text:'Test'}, {icon:'', text:'Test'}];
-  const supporters: Array<{icon:string, text:string}> = [{icon:'', text:'Test'}, {icon:'', text:'Test'}];
+  const cards: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
+  const supporters: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
 
   return (
     <div>
