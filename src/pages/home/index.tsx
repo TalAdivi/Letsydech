@@ -1,7 +1,7 @@
 import React from 'react';
 import './home.scss';
-import Navbar from '../../shared/components/navbar/navbar';
-import Banner from './banner/banner';
+import Navbar from '../../shared/components/navbar';
+import Banner from './banner';
 /**
  * Nav
  * BANNER
@@ -11,7 +11,6 @@ import Banner from './banner/banner';
 const Home = ():any => {
   return (
     <div>
-      HOME IS test
       <Navbar />
       <Banner />
     </div>

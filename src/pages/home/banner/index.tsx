@@ -9,10 +9,10 @@ const Banner = () => {
       <Grid item xs={10}>
         <Grid container spacing={2} justify="center">
           <Grid item xs={6}>
-            <Paper className='item'>Hellowww</Paper>
+            <Paper className='item'>TEXT PLACEHOLDER</Paper>
           </Grid>
           <Grid item xs={6}>
-            <Paper className='item'>Hellowww</Paper>
+            <Paper className='item'>IMAGE PLACEHOLDER</Paper>
           </Grid>
         </Grid>
       </Grid>

@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
@@ -44,11 +45,11 @@ export default function Navbar(): any {
   return (
     <div className='left'>
       <AppBar position="fixed" color="transparent">
-        <Grid container alignItems="flex-start" justify="flex-end" direction="row">
+        <Grid container alignItems="flex-start" justify="flex-end" direction="row" >
           <Tabs
             value={value}
             onChange={handleChange}
-          // centered
+
           >
             <Tab label="Item One" />
             <Tab label="Item Two" />
@@ -57,7 +58,7 @@ export default function Navbar(): any {
         </Grid>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <div>Tests Comp</div>
+        one
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
