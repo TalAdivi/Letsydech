@@ -13,7 +13,7 @@ const Home = (): any => {
   return (
     <div>
       <Navbar />
-      <Grid className='content' container spacing={2} justify='center'>
+      <Grid className='bg' container spacing={2} justify='center'>
         <Grid item xs={10}>
           <Banner />
         </Grid>
