@@ -2,12 +2,21 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory
+} from 'react-router-dom';
+
 
 import './navbar.scss';
 import { Grid } from '@material-ui/core';
+import T from './t';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -45,16 +54,46 @@ export default function Navbar(): any {
   return (
     <div className='left'>
       <AppBar position="fixed" color="transparent">
-        <Grid container alignItems="flex-start" justify="flex-end" direction="row" >
-          <Tabs
-            value={value}
-            onChange={handleChange}
+        <Grid container alignItems="flex-start" justify="flex-end" direction="row">
 
-          >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
-          </Tabs>
+          <Router>
+
+            <Tabs
+              variant="fullWidth"
+              value={value}
+              onChange={handleChange}
+              aria-label="nav tabs example"
+            >
+              <Tab component={Link} label="Page One" to="/drafts"  />
+              <Tab component={Link} label="Page Two" to="/trash"  />
+
+            </Tabs>
+          </Router>
+          {/* <Router>
+            <div>
+              <Tab>
+
+                <Link to="/">Home</Link>
+              </Tab>
+  
+              <Link to="/about">About</Link>
+      
+              <Link to="/users">Users</Link>
+      
+              <Switch>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/users">
+                  <Users />
+                </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </div>
+          </Router> */}
+          {/* <T /> */}
         </Grid>
       </AppBar>
       <TabPanel value={value} index={0}>
