@@ -38,7 +38,7 @@
       "max-len": [
         "warn",
         {
-          "code": 80,
+          "code": 200,
           "ignoreStrings": true,
           "ignoreTemplateLiterals": true,
           "ignoreComments": true
@@ -59,6 +59,8 @@
       "react/jsx-one-expression-per-line": "off",
       "react/jsx-wrap-multilines": "off",
       "react/destructuring-assignment": "off",
-      "import/extensions": 0
+      "import/extensions": "off",
+      "react/jsx-fragments": "off",
+      "react/no-array-index-key": "off"
     }
   }
