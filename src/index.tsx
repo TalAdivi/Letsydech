@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 
 import App from './app';
 
-// ! we need here to insert all components to 'Route' and render only 'Router' from here
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

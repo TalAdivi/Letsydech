@@ -5,7 +5,7 @@ import styles from './banner.module.scss';
 
 const Banner = () => {
   return (
-    <Grid className={styles.bg} container spacing={2} justify='center'>
+    <Grid container spacing={2} justify='center'>
       <Grid item xs={6}>
         <Paper className={styles.item}>TEXT PLACEHOLDER</Paper>
       </Grid>

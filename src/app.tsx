@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import MetaTags from 'react-meta-tags';
 import Home from './pages/home';
+import AboutUs from './pages/aboutUs';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Router>
         <Route exact path="/" component={Home} />
         <Route exact path="/test" component={() => { return <div>'Test'</div>; }} />
+        <Route exact path="/aboutUs" component={AboutUs} />
       </Router>
     </div>
   );
