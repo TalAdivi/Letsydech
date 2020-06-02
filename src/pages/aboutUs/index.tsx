@@ -2,13 +2,10 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardMedia from '@material-ui/core/CardMedia';
+import SingleLinePicList from '../../shared/components/singleLinePicList';
+
 import Navbar from '../../shared/components/navbar';
 import styles from './aboutUs.module.scss';
-// import './aboutUs.scss ';
-// import './aboutUs.scss';
 
 const AboutUs = (props: any): any => {
   return (
@@ -41,56 +38,7 @@ const AboutUs = (props: any): any => {
         </Grid>
       </Grid>
       <Grid className={styles.imgGrid} container spacing={2} justify='center'>
-        <Grid item xs={2}>
-          <Card >
-            <CardActionArea>
-              <CardMedia 
-                className={styles.imgPaper}
-                image="https://imgur.com/XMuR7pR.png"
-              />
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={2}>
-          <Card >
-            <CardActionArea>
-              <CardMedia 
-                className={styles.imgPaper}
-                image="https://imgur.com/XMuR7pR.png"
-              />
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={2}>
-          <Card >
-            <CardActionArea>
-              <CardMedia 
-                className={styles.imgPaper}
-                image="https://imgur.com/XMuR7pR.png"
-              />
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={2}>
-          <Card >
-            <CardActionArea>
-              <CardMedia 
-                className={styles.imgPaper}
-                image="https://imgur.com/XMuR7pR.png"
-              />
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid item xs={2}>
-          <Card >
-            <CardActionArea>
-              <CardMedia 
-                className={styles.imgPaper}
-                image="https://imgur.com/XMuR7pR.png"
-              />
-            </CardActionArea>
-          </Card>
-        </Grid>
+        <SingleLinePicList />
 
 
       </Grid>
