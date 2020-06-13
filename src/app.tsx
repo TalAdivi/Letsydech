@@ -15,7 +15,7 @@ const App = () => {
       </MetaTags>
       <Router>
         <Route exact path="/" component={Home} />
-        <Route exact path="/Gallery" component={() => { Gallery }} />
+        <Route exact path="/Gallery" component={Gallery} />
         <Route exact path="/aboutUs" component={AboutUs} />
       </Router>
     </div>
