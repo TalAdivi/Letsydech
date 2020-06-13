@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import MetaTags from 'react-meta-tags';
 import Home from './pages/home';
 import AboutUs from './pages/aboutUs';
+import Gallery from './pages/gallery';
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
       </MetaTags>
       <Router>
         <Route exact path="/" component={Home} />
-        <Route exact path="/test" component={() => { return <div>'Test'</div>; }} />
+        <Route exact path="/Gallery" component={() => { Gallery }} />
         <Route exact path="/aboutUs" component={AboutUs} />
       </Router>
     </div>
