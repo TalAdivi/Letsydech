@@ -10,7 +10,7 @@ export default function Navbar(props: any): any {
         <Grid container alignItems="flex-start" justify="flex-end" direction="row">
           <Router>
             <div>
-              <Tab label='test' onClick={() => { props.history.push('/test'); }} />
+              <Tab label='gallery' onClick={() => { props.history.push('/gallery'); }} />
               <Tab label='about us' onClick={() => { props.history.push('/aboutUs'); }} />
               <Tab label='home' onClick={() => { props.history.push('/'); }} />
             </div>

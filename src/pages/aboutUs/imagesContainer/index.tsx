@@ -19,29 +19,34 @@ const getCols = (screenWidth: any) => {
 
 const imagesContainer = (props: any) => {
   const cols = getCols(props.width);
-  const data: Array<{ img: string, title: string }> = [{
-    img: 'https://imgur.com/XMuR7pR.png',
-    title: 'Image1'
+  const data: Array<{ url: string, title: string, cols: number }> = [{
+    url: 'https://imgur.com/XMuR7pR.png',
+    title: 'Image1',
+    cols: 1
   }, {
-    img: 'https://imgur.com/XMuR7pR.png',
-    title: 'Image1'
+    url: 'https://imgur.com/XMuR7pR.png',
+    title: 'Image1',
+    cols: 1
   }, {
-    img: 'https://imgur.com/XMuR7pR.png',
-    title: 'Image1'
+    url: 'https://imgur.com/XMuR7pR.png',
+    title: 'Image1',
+    cols: 1
   }, {
-    img: 'https://imgur.com/XMuR7pR.png',
-    title: 'Image1'
+    url: 'https://imgur.com/XMuR7pR.png',
+    title: 'Image1',
+    cols: 1
   }, {
-    img: 'https://imgur.com/XMuR7pR.png',
-    title: 'Image1'
+    url: 'https://imgur.com/XMuR7pR.png',
+    title: 'Image1',
+    cols: 1
   }];
 
   return (
     <Grid className={styles.images} container>
-      <GridList className={styles.list} cols={cols}> 
-        {data.map((tile) => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
+      <GridList className={styles.list} cols={cols}>
+        {data.map((image) => (
+          <GridListTile key={image.url}>
+            <img src={image.url} alt={image.title} />
           </GridListTile>
         ))}
       </GridList>
