@@ -1,6 +1,5 @@
 import React from 'react';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
+import { GridList, GridListTile } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
 
 const Gallery = (props: any): any => {
