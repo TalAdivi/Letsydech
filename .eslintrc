@@ -61,6 +61,10 @@
       "react/destructuring-assignment": "off",
       "import/extensions": "off",
       "react/jsx-fragments": "off",
-      "react/no-array-index-key": "off"
+      "react/no-array-index-key": "off",
+      "react/button-has-type":"off",
+      "react/prefer-stateless-function":"warn",
+      "react/self-closing-comp":"off",
+      "jsx-a11y/control-has-associated-label":"off"
     }
   }

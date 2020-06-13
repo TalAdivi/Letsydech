@@ -1,18 +1,18 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
+import { Grid } from '@material-ui/core';
 
 import './home.scss';
 import Navbar from '../../shared/components/navbar';
 import Banner from './banner';
 import Cards from './cards';
 
-const Home = (): any => {
+const Home = (props: any): any => {
   const cards: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
   const supporters: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
 
   return (
     <div>
-      <Navbar />
+      <Navbar history={props.history} />
       <Grid className='bg' container spacing={2} justify='center'>
         <Grid item xs={10}>
           <Banner />
