@@ -1,0 +1,10 @@
+.images{
+  margin-top: 10vh !important;
+  overflow: hidden;
+  width: 80vw !important;
+  
+  .list{    
+    flex-wrap: nowrap;
+    transform: translateZ(0);
+  }
+}

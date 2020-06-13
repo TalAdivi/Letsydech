@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-button {
+  width: 26px;
+  height: 26px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 6px none #ffffff;
+  border-radius: 38px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #666666;
+}
+::-webkit-scrollbar-track {
+  background: #cfcfcf;
+  border: 77px none #ffffff;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #cfcfcf;
+}
+::-webkit-scrollbar-track:active {
+  background: #ffffff;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

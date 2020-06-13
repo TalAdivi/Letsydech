@@ -1,8 +1,6 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import SingleLinePicList from '../../shared/components/singleLinePicList';
+import { Grid, Paper, Typography } from '@material-ui/core';
+import ImagesContainer from './imagesContainer';
 
 import Navbar from '../../shared/components/navbar';
 import styles from './aboutUs.module.scss';
@@ -23,11 +21,11 @@ const AboutUs = (props: any): any => {
 
               להוות מקום בטוח, מכבד ותומך לנשים נפגעות התמכרות.
 
- 
+              
 
               לפעול מול הרשויות לאימוץ מדיניות פרוגרסיבית בכל הנוגע לטיפול בנשים המכורות.
 
- 
+              
 
               להעלות מודעות בקרב הציבור לקשר ההדוק בין אלימות ואלימות מינית בפרט להתפתחות התמכרויות בקרב נשים.
 
@@ -37,20 +35,11 @@ const AboutUs = (props: any): any => {
           </Paper>
         </Grid>
       </Grid>
-      <Grid className={styles.imgGrid} container spacing={2} justify='center'>
-        <SingleLinePicList />
-
-
+      <Grid container spacing={2} justify='center'>
+        <ImagesContainer />
       </Grid>
-
     </div>
   );
 };
 
 export default AboutUs;
-
-// height: 50vh !important;
-// margin-bottom: 15px !important;
-// margin-top: 10vh;
-// height: 30vh;
-// style={{ backgroundColor:'blue', height: '50vh', marginBottom: '15px' }}
