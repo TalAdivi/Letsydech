@@ -11,7 +11,7 @@ export default function Navbar(props: any): any {
           <Router>
             <div>
               <Tab label='gallery' onClick={() => { props.history.push('/gallery'); }} />
-              <Tab label='about us' onClick={() => { props.history.push('/aboutUs'); }} />
+              <Tab label='aboutUs' onClick={() => { props.history.push('/aboutUs'); }} />
               <Tab label='home' onClick={() => { props.history.push('/'); }} />
             </div>
           </Router>
