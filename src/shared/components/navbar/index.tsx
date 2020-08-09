@@ -3,16 +3,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Grid, Tab, AppBar } from '@material-ui/core';
 import styles from './navbar.module.scss';
 
-export default function Navbar(props: any): any {
+export default function Navbar({ history }: any): any {
   return (
     <div>
-      <AppBar position="fixed" color="transparent">
+      <AppBar position="static" color="transparent">
         <Grid container alignItems="flex-start" justify="flex-end" direction="row">
           <Router>
             <div>
-              <Tab label='gallery' onClick={() => { props.history.push('/gallery'); }} />
-              <Tab label='aboutUs' onClick={() => { props.history.push('/aboutUs'); }} />
-              <Tab label='home' onClick={() => { props.history.push('/'); }} />
+              <Tab label='gallery' onClick={() => { history.push('/gallery'); }} />
+              <Tab label='aboutUs' onClick={() => { history.push('/aboutUs'); }} />
+              <Tab label='home' onClick={() => { history.push('/'); }} />
             </div>
           </Router>
         </Grid>
