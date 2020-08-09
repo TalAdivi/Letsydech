@@ -6,13 +6,12 @@ import Navbar from '../../shared/components/navbar';
 import Banner from './banner';
 import Cards from './cards';
 
-const Home = (props: any): any => {
+const Home = ({history}: any): any => {
   const cards: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
   const supporters: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
-
   return (
     <div>
-      <Navbar history={props.history} />
+      <Navbar history={history} />
       <Grid className='bg' container spacing={2} justify='center'>
         <Grid item xs={10}>
           <Banner />

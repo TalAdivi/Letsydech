@@ -5,10 +5,10 @@ import ImagesContainer from './imagesContainer';
 import Navbar from '../../shared/components/navbar';
 import styles from './aboutUs.module.scss';
 
-const AboutUs = (props: any): any => {
+const AboutUs = ({history}: any): any => {
   return (
     <div className={styles.bg}>
-      <Navbar history={props.history} />
+      <Navbar history={history} />
       <Grid container spacing={2} justify='center'>
         <Grid item xs={10}>
           <Paper className={styles.item}>
