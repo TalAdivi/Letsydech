@@ -1,0 +1,31 @@
+h2{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+h1{
+    display: grid;
+    place-items: center;
+    margin: 5vh;
+}
+.container{
+    flex-wrap: wrap;
+    display:flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.images{
+    flex-wrap: wrap;
+    display:flex;
+    justify-content: center;
+}
+
+.image{
+    width: 300px;
+    height: 300px;
+    flex: 1 1 300px;
+    flex: 0 1 300px;
+    margin: 5px;
+}
