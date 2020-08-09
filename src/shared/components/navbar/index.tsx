@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Grid, Tab, AppBar } from '@material-ui/core';
-import styles from './navbar.module.scss';
 
 export default function Navbar({ history }: any): any {
   return (

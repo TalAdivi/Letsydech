@@ -1,13 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
-import { GridList, GridListTile } from '@material-ui/core';
 import styles from './gallery.module.scss';
 import Image from '../../shared/models/image.model';
 import GalleryModel from '../../shared/models/image.model';
 import Loading from '../../shared/components/loading';
 import Navbar from '../../shared/components/navbar';
 
-const Gallery = ({history}: any): any => {
+const Gallery = ({ history }: any): any => {
   const [images, setImages] = React.useState<Array<Image>>([]);
   const [loading, setLoading] = React.useState(false);
   const [title, setTitle] = React.useState("");
@@ -35,7 +34,7 @@ const Gallery = ({history}: any): any => {
       <Navbar history={history} />
       {loading ? <Loading loading={loading} /> :
         <div>
-          {images.length == 0 ? <h2>No Content</h2> :
+          {images.length === 0 ? <h2>No Content</h2> :
             <div>
               <div>
                 <h1>{title}</h1>
@@ -43,7 +42,6 @@ const Gallery = ({history}: any): any => {
               <div className={styles.images}>
                 {images.map((image) => (
                   <img key={image.id} className={styles.image} src={image.url} alt={""} />
-
                 ))}
               </div>
             </div>
