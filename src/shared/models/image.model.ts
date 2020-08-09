@@ -4,8 +4,6 @@ export default interface Image {
 };
 
 export default interface Gallery {
-    data: {
-        Title: string;
-        Images: Array<Image>;
-    }
+    Title: string;
+    Images: Array<Image>;
 };
