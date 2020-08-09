@@ -5,7 +5,7 @@ import Home from './pages/home';
 import AboutUs from './pages/aboutUs';
 import Gallery from './pages/gallery';
 
-const App = ({ apollo }: any): any => {
+const App = (): any => {
   return (
     <div>
       <MetaTags>
