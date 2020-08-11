@@ -1,45 +1,76 @@
 import React from 'react';
-import { Grid, Paper, Typography } from '@material-ui/core';
-import ImagesContainer from './imagesContainer';
-
+import Axios from 'axios';
+import { Grid, GridList, GridListTile, Typography } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import { IAboutUs, IAboutUsData } from '../../shared/models/image.model';
+import Loading from '../../shared/components/loading';
 import styles from './aboutUs.module.scss';
 
-const AboutUs = ({history}: any): any => {
+const getCols = (screenWidth: any) => {
+  console.log('screenWidth -> ' , screenWidth)
+  if (isWidthUp('lg', screenWidth)) {
+    return 5;
+  }
+
+  if (isWidthUp('md', screenWidth)) {
+    return 3;
+  }
+  return 2;
+};
+
+const AboutUs = ({ history, width }:any): any => {
+  const [loading, setLoading] = React.useState(true);
+  const [allData, setAllData] = React.useState<IAboutUsData>();
+  const cols = getCols(width)
+  React.useEffect((): any => {
+    fetchImages();
+    
+  }, []);
+
+
+  const fetchImages = async (): Promise<void> => {
+    try {
+      console.log(`${process.env.REACT_APP_BACKEND_URL}/about-us`);
+      const res: IAboutUs = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/about-us`);
+      setAllData(res.data);
+      console.log(res.data);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className={styles.bg}>
+    <div>
       <Navbar history={history} />
-      <Grid container spacing={2} justify='center'>
-        <Grid item xs={10}>
-          <Paper className={styles.item}>
-            <Typography align='center' variant='body2'>
-              לצידךְ – סיוע לנשים נפגעות התמכרויות (580564680) עמותה רשומה ללא כוונת רווח, נוסדה בשנת 2012, על ידי נשים החולקות את אותה אידיאולוגיה, מתוך הבנת צרכיהן הייחודיים של נשים מכורות ומתוך הכרה בהיעדר מענה בשלבים מסוימים של שיקום לאוכלוסייה זו.
-
-              העמותה שמה לה למטרה קידום פעילות במספר תחומים המשרתים הן את הפרט והן את החברה בכלל:
-
-              מתן מידע וסיוע מקצועי בסוגיות כמו גמילה, טיפול נפשי, עזרה במיצוי זכויות.
-
-              להוות מקום בטוח, מכבד ותומך לנשים נפגעות התמכרות.
-
-              
-
-              לפעול מול הרשויות לאימוץ מדיניות פרוגרסיבית בכל הנוגע לטיפול בנשים המכורות.
-
-              
-
-              להעלות מודעות בקרב הציבור לקשר ההדוק בין אלימות ואלימות מינית בפרט להתפתחות התמכרויות בקרב נשים.
-
-
-              אוכלוסיית היעד של העמותה הינה נשים נפגעות התמכרויות, מגיל 18 ומעלה.
-            </Typography>
-          </Paper>
-        </Grid>
-      </Grid>
-      <Grid container spacing={2} justify='center'>
-        <ImagesContainer />
-      </Grid>
+      {loading ? <Loading loading={loading} /> :
+        <div>
+          {allData?.Images.length === 0 ? <h2>No Content</h2> :
+            <div>
+              <div className={styles.bg}>
+                <h1>{allData?.Title}</h1>
+              <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >{allData?.Text1}</Typography>
+              <Typography align="center" className={styles.text2Margin}>{allData?.Text2}</Typography>
+              <Typography align="center" className={styles.text3Margin}>{allData?.Text3}</Typography>
+              </div>
+              <Grid justify="center" className={styles.images} >
+                <GridList className={styles.list} cols={cols} >
+                  {allData?.Images.map((image) => (
+                    <GridListTile key={image.url}>
+                      <img src={image.url} alt={image.id} />
+                    </GridListTile>
+                  ))}
+                </GridList>
+              </Grid>
+            </div>
+          }
+        </div>
+      }
     </div>
   );
 };
 
-export default AboutUs;
+export default withWidth()(AboutUs);
+
