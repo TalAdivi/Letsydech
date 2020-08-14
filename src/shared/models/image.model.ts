@@ -17,7 +17,6 @@ export interface IAboutUs {
         Text1: string;
         Text2: string;
         Text3: string;
-
     }
 };
 
@@ -27,5 +26,4 @@ export interface IAboutUsData {
     Text1: string;
     Text2: string;
     Text3: string;
-
 };

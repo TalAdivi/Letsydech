@@ -7,9 +7,8 @@ import Loading from '../../shared/components/loading';
 import Navbar from '../../shared/components/navbar';
 
 const Gallery = ({ history }: any): any => {
-  const [images, setImages] = React.useState<Array<Image>>([]);
+  const [data, setData] = React.useState<GalleryModel>();
   const [loading, setLoading] = React.useState(false);
-  const [title, setTitle] = React.useState("");
   React.useEffect((): any => {
     fetchImages();
   }, []);
@@ -18,10 +17,8 @@ const Gallery = ({ history }: any): any => {
     try {
       setLoading(true);
       console.log(`${process.env.REACT_APP_BACKEND_URL}/gallery`);
-      const res: GalleryModel = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/gallery`);
-      setImages(res.data.Images);
-      setTitle(res.data.Title);
-      console.log(res.data);
+      const res: { data: GalleryModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/gallery`);
+      setData(res.data);
     } catch (e) {
       console.log(e);
     } finally {
@@ -33,20 +30,24 @@ const Gallery = ({ history }: any): any => {
     <div>
       <Navbar history={history} />
       {loading ? <Loading loading={loading} /> :
-        <div>
-          {images.length === 0 ? <h2>No Content</h2> :
-            <div>
-              <div>
-                <h1>{title}</h1>
-              </div>
-              <div className={styles.images}>
-                {images.map((image) => (
-                  <img key={image.id} className={styles.image} src={image.url} alt={""} />
-                ))}
-              </div>
-            </div>
+        <>
+          {!data ? null :
+            <>
+              {data.Images.length === 0 ? <h2>No Content</h2> :
+                <>
+                  <div>
+                    <h1>{data.Title}</h1>
+                  </div>
+                  <div className={styles.images}>
+                    {data.Images.map((image) => (
+                      <img key={image.id} className={styles.image} src={image.url} alt={""} />
+                    ))}
+                  </div>
+                </>
+              }
+            </>
           }
-        </div>
+        </>
       }
     </div>
   );
