@@ -8,7 +8,7 @@ import Cards from './cards';
 
 const Home = ({history}: any): any => {
   const cards: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
-  const supporters: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
+  const supporters: Array<{ icon: string, text: string }> = [{ icon: '', text: 'text1111' }, { icon: '', text: 'text2222' },{ icon: '', text: 'text3333' }, { icon: '', text: 'text2222' }, { icon: '', text: 'text2222' }, { icon: '', text: 'text2222' }, { icon: '', text: 'text2222' }];
   return (
     <div>
       <Navbar history={history} />
@@ -24,7 +24,13 @@ const Home = ({history}: any): any => {
       </Grid> */}
       <Grid className='content' container spacing={2} justify='center'>
         <Grid item xs={10}>
-          <Cards title='Supporters' data={supporters} />
+          <Cards title='שותפים לדרך' data={supporters} />
+        </Grid>
+      </Grid>
+
+      <Grid className='content' container spacing={2} justify='center'>
+        <Grid item xs={10}>
+          
         </Grid>
       </Grid>
     </div>

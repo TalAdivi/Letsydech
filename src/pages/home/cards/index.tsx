@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid, Paper, GridList, GridListTile, Typography } from '@material-ui/core';
 import Card from './card';
 
 import styles from './cards.module.scss';
@@ -9,18 +9,23 @@ const Cards = ({ title, data }: { title: string, data: Array<{ icon: string, tex
     <Grid container justify="center">
       {title !== '' ?
         <Grid className={styles.content} container spacing={2} justify='center'>
-          <Grid item xs={2}>
-            <Paper className='item'>{title}</Paper>
-          </Grid>
+
+          <Typography color={"textPrimary"} className={styles.item}>{title}</Typography>
+
         </Grid>
         : null}
       {data ?
         <Grid className={styles.content} container spacing={2} justify='center'>
-          {data.map((elem: { icon: string, text: string }, index: number): any => (
-            <Grid item xs={4} key={index + elem.icon + elem.text}>
-              <Card icon={elem.icon} text={elem.text} />
-            </Grid>
-          ))}
+          <GridList spacing={10} className={styles.list} cols={3}>
+            {data.map((elem: { icon: string, text: string }, index: number): any => (
+              // <Grid item xs={4} key={index + elem.icon + elem.text}>
+              //  </Grid>
+              <GridListTile className={styles.gridListTitle}>
+
+                <Card icon={elem.icon} text={elem.text} />
+              </GridListTile>
+            ))}
+          </GridList>
         </Grid>
         : null}
     </Grid>
