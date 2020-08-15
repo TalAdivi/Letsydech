@@ -5,6 +5,7 @@ import './home.scss';
 import Navbar from '../../shared/components/navbar';
 import Banner from './banner';
 import Cards from './cards';
+import DonateUs from './donateUs';
 
 const Home = ({history}: any): any => {
   const cards: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
@@ -28,9 +29,10 @@ const Home = ({history}: any): any => {
         </Grid>
       </Grid>
 
-      <Grid className='content' container spacing={2} justify='center'>
+      <Grid className='donate' container spacing={2} justify='center'>
         <Grid item xs={10}>
           
+          <DonateUs primaryText='היי אנא תירמו לנו כדי להמשיך' secondaryText='כל תרומה שלכם עוזרת' />
         </Grid>
       </Grid>
     </div>

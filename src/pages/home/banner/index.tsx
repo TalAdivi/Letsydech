@@ -5,8 +5,8 @@ import styles from './banner.module.scss';
 const Banner = () => {
   return (
     <Grid container spacing={2} justify='center'>
-      <Grid item xs={12}>
-        <Paper className={[styles.item, styles.bgImg].join(' ')}>
+      <Grid className={[styles.item, styles.bgImg].join(' ')} item xs={12}>
+        {/* <Paper  className={[styles.item, styles.bgImg].join(' ')}> */}
           <Typography color={"textPrimary"} align={"center"} className={styles.typo}>
             עזרה במיצוי זכויות. להוות מקום בטוח, מכבד ותומך לנשים נפגעות התמכרות. לפעול מול הרשויות לאימוץ מדיניות פרוגרסיבית
         
@@ -16,7 +16,7 @@ const Banner = () => {
              </Typography>
              
           </Typography>
-        </Paper>
+        {/* </Paper> */}
       </Grid>
     </Grid>
   );

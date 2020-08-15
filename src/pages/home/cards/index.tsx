@@ -1,10 +1,25 @@
 import React from 'react';
-import { Grid, Paper, GridList, GridListTile, Typography } from '@material-ui/core';
+import { Grid, GridList, GridListTile, Typography } from '@material-ui/core';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import Card from './card';
 
 import styles from './cards.module.scss';
 
-const Cards = ({ title, data }: { title: string, data: Array<{ icon: string, text: string }> }) => {
+
+const getCols = (screenWidth: any) => {
+  console.log('screenWidth -> ', screenWidth)
+  if (isWidthUp('lg', screenWidth)) {
+    return 5;
+  }
+
+  if (isWidthUp('md', screenWidth)) {
+    return 3;
+  }
+  return 2;
+};
+
+const Cards = ({ title, data ,width}: { title: string, data: Array<{ icon: string, text: string }>, width:any }) => {
+  const cols = getCols(width)
   return (
     <Grid container justify="center">
       {title !== '' ?
@@ -16,10 +31,8 @@ const Cards = ({ title, data }: { title: string, data: Array<{ icon: string, tex
         : null}
       {data ?
         <Grid className={styles.content} container spacing={2} justify='center'>
-          <GridList spacing={10} className={styles.list} cols={3}>
+          <GridList spacing={10} className={styles.list} cols={cols}>
             {data.map((elem: { icon: string, text: string }, index: number): any => (
-              // <Grid item xs={4} key={index + elem.icon + elem.text}>
-              //  </Grid>
               <GridListTile className={styles.gridListTitle}>
 
                 <Card icon={elem.icon} text={elem.text} />
@@ -32,4 +45,4 @@ const Cards = ({ title, data }: { title: string, data: Array<{ icon: string, tex
   );
 };
 
-export default Cards;
+export default withWidth()(Cards) ;

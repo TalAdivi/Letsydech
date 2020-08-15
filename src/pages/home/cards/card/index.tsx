@@ -5,16 +5,6 @@ const SingleCard = ({ icon, text }: { icon: string, text: string }) => {
   return (
     <div>
       <Card>
-        {/* <CardContent>
-          <Typography variant="h5" component="h5">
-            {icon}
-          </Typography>
-          <Typography variant="body2" component="p">
-            {text}
-          </Typography>
-        </CardContent> */}
-
-
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
@@ -25,7 +15,7 @@ const SingleCard = ({ icon, text }: { icon: string, text: string }) => {
         />
         <CardContent >
           <Typography gutterBottom variant="subtitle1" component="h6">
-            Lizard
+            סטימצקי
           </Typography>
         </CardContent>
       </Card>
