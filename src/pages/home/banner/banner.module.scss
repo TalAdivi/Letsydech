@@ -1,4 +1,45 @@
 .item{
-    margin-top: 10vh;
-    height: 30vh;
+    margin-top: 8vh;
+    min-height: 35vh;;
+    display: grid;
+    place-items: center;
+    
+}
+
+.bgImg{
+    position: relative;
+    z-index: 1;
+}
+
+.bgImg::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80") center center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .5;
+}
+
+.text{
+    width: 80%;
+    opacity: unset !important;
+}
+
+.typo{
+
+    margin: 0 2vh 0 2vh !important;
+    font-weight: bolder !important;
+
+}
+
+.typoSecondary{
+    font-weight: 700 !important;
+    margin-top: 10px !important;    
+    margin: 10px 15% 0 15% !important;
 }

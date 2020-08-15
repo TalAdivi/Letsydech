@@ -17,11 +17,11 @@ const Home = ({history}: any): any => {
           <Banner />
         </Grid>
       </Grid>
-      <Grid className='content' container spacing={2} justify='center'>
+      {/* <Grid className='content' container spacing={2} justify='center'>
         <Grid item xs={10}>
           <Cards title='' data={cards} />
         </Grid>
-      </Grid>
+      </Grid> */}
       <Grid className='content' container spacing={2} justify='center'>
         <Grid item xs={10}>
           <Cards title='Supporters' data={supporters} />
