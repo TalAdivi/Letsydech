@@ -4,10 +4,11 @@ import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import Card from './card';
 
 import styles from './cards.module.scss';
+import { Image } from '../../../shared/models/gallery.model';
 
 
 const getCols = (screenWidth: any) => {
-  console.log('screenWidth -> ', screenWidth)
+  // console.log('screenWidth -> ', screenWidth)
   if (isWidthUp('lg', screenWidth)) {
     return 5;
   }
@@ -18,8 +19,10 @@ const getCols = (screenWidth: any) => {
   return 2;
 };
 
-const Cards = ({ title, data ,width}: { title: string, data: Array<{ icon: string, text: string }>, width:any }) => {
+const Cards = ({ title, data, width }: { title: string, data: Array<Image>, width: any }) => {
   const cols = getCols(width)
+
+  console.log('data-> ' ,data)
   return (
     <Grid container justify="center">
       {title !== '' ?
@@ -32,12 +35,21 @@ const Cards = ({ title, data ,width}: { title: string, data: Array<{ icon: strin
       {data ?
         <Grid className={styles.content} container spacing={2} justify='center'>
           <GridList spacing={10} className={styles.list} cols={cols}>
-            {data.map((elem: { icon: string, text: string }, index: number): any => (
-              <GridListTile className={styles.gridListTitle}>
+            {data.map((elem): any => {
 
-                <Card icon={elem.icon} text={elem.text} />
-              </GridListTile>
-            ))}
+               console.log('elem -> ', elem) 
+            }
+            
+            // (
+            //   <GridListTile className={styles.gridListTitle}>
+
+
+            //     <Card icon={elem.url} text={elem.caption} />
+            //   </GridListTile>
+            // )
+            
+            
+            )}
           </GridList>
         </Grid>
         : null}
@@ -45,4 +57,4 @@ const Cards = ({ title, data ,width}: { title: string, data: Array<{ icon: strin
   );
 };
 
-export default withWidth()(Cards) ;
+export default withWidth()(Cards);
