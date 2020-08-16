@@ -9,9 +9,9 @@ export default function Navbar({ history }: any): any {
         <Grid container alignItems="flex-start" justify="flex-end" direction="row">
           <Router>
             <div>
-              <Tab label='gallery' onClick={() => { history.push('/gallery'); }} />
-              <Tab label='aboutUs' onClick={() => { history.push('/aboutUs'); }} />
-              <Tab label='home' onClick={() => { history.push('/'); }} />
+              <Tab label='גלריית תמונות' onClick={() => { history.push('/gallery'); }} />
+              <Tab label='אודותינו' onClick={() => { history.push('/aboutUs'); }} />
+              <Tab label='עמוד הבית' onClick={() => { history.push('/'); }} />
             </div>
           </Router>
         </Grid>

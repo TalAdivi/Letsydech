@@ -9,6 +9,7 @@ import { Image } from '../../../shared/models/gallery.model';
 
 const getCols = (screenWidth: any) => {
   // console.log('screenWidth -> ', screenWidth)
+
   if (isWidthUp('lg', screenWidth)) {
     return 5;
   }
@@ -22,7 +23,7 @@ const getCols = (screenWidth: any) => {
 const Cards = ({ title, data, width }: { title: string, data: Array<Image>, width: any }) => {
   const cols = getCols(width)
 
-  console.log('data-> ' ,data)
+  console.log('data-> ', data)
   return (
     <Grid container justify="center">
       {title !== '' ?
@@ -35,20 +36,23 @@ const Cards = ({ title, data, width }: { title: string, data: Array<Image>, widt
       {data ?
         <Grid className={styles.content} container spacing={2} justify='center'>
           <GridList spacing={10} className={styles.list} cols={cols}>
-            {data.map((elem): any => {
+            {data.map((elem): any =>
+              //  {
 
-               console.log('elem -> ', elem) 
-            }
-            
-            // (
-            //   <GridListTile className={styles.gridListTitle}>
+              //    console.log('elem -> ', elem) 
+              // }
+
+              (
+                // <GridListTile className={styles.gridListTitle} >
+                <Grid container alignItems="center">
+
+                  <Card icon={elem.url} text={elem.caption} />
+                </Grid>
+
+                // </GridListTile>
+              )
 
 
-            //     <Card icon={elem.url} text={elem.caption} />
-            //   </GridListTile>
-            // )
-            
-            
             )}
           </GridList>
         </Grid>

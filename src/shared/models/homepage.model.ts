@@ -8,8 +8,8 @@ export interface ISupporters{
 export interface IHomePage{
     Title:string;
     TitleImage: Image;
-    TitleText: string;
-    SupporterImage:Array<Image>;
+    titleText: string;
+    SupportersImages:Array<Image>;
     SupporterTitle: string;
     SupporterText: string;
     DonationTitle: string;

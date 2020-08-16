@@ -48,32 +48,35 @@ const Home = ({ history }: any): any => {
             <Navbar history={history} />
             <Grid className='bg' container spacing={2} justify='center'>
               <Grid item xs={10}>
-                <Banner />
+                <Banner primaryText={data?.Title!} secondaryText={data?.titleText!}/>
               </Grid>
             </Grid>
             <Grid className='content' container spacing={2} justify='center'>
               <Grid item xs={10}>
-                <Cards title='שותפים לדרך' data={data?.SupporterImage || Array<Image>({
-                  url: "string",
-                  id: "string",
-                  formats: {
-                    large: "any",
-                    meduim: "any",
-                    small: "any",
-                    thumbnail: "any",
-                  },
-                  height: 100,
-                  width: 100,
-                  alternativeText: "string",
-                  caption: "string"
-                })} />
+                <Cards title='שותפים לדרך' data={data?.SupportersImages!
+                
+                // || Array<Image>({
+                //   url: "string",
+                //   id: "string",
+                //   formats: {
+                //     large: "any",
+                //     meduim: "any",
+                //     small: "any",
+                //     thumbnail: "any",
+                //   },
+                //   height: 100,
+                //   width: 100,
+                //   alternativeText: "string",
+                //   caption: "string"
+                // })
+              } />
               </Grid>
             </Grid>
 
             <Grid className='donate' container spacing={2} justify='center'>
               <Grid item xs={10}>
 
-                <DonateUs primaryText={data?.DonationTitle || ''} secondaryText={data?.DonationText || ''} />
+                <DonateUs primaryText={data?.DonationTitle! } secondaryText={data?.DonationText! } />
               </Grid>
             </Grid>
           </div>
