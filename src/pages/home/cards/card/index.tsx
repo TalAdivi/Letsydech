@@ -6,7 +6,7 @@ const SingleCard = ({ icon, text }: { icon: string, text: string }) => {
   return (
 
     // <>
-    <Grid item xl alignContent="space-around">
+    <Grid item xl={"auto"} alignContent="space-around">
       <CardMedia
           className={styles.myCardMedia}
           component="img"

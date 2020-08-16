@@ -23,51 +23,50 @@ const ContactUs = ({ history, width }: any): any => {
   return (
     <div>
       <Navbar history={history} />
-      {/* {loading ? <Loading loading={loading} /> : */}
       <div>
         <div>
           <div className={styles.bg}>
-            <h1>אנחנו לצידך</h1>
+            <h1 className={styles.title}>אנחנו לצידך</h1>
             <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >השאירו פרטים וניצור קשר בהקדם</Typography>
-            <div className="App">
-              <form onSubmit={handleSubmit(onSubmit)}>
+            <div className={styles.main}>
+              <form className={styles.myForm} onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                  <label htmlFor="firstName">First Name</label>
-                  <input name="firstName" placeholder="bill" ref={register} />
+                  <label htmlFor="firstName">שם</label>
+                  <input className= {styles.input} name="firstName" placeholder="שם" ref={register} />
                 </div>
 
                 <div>
-                  <label htmlFor="lastName">Last Name</label>
-                  <input name="lastName" placeholder="luo" ref={register} />
-                </div>
-
-                <div>
-                  <label htmlFor="isDeveloper">Is an developer?</label>
+                  <label htmlFor="email">אימייל</label>
                   <input
-                    type="checkbox"
-                    name="isDeveloper"
-                    placeholder="luo"
-                    value="yes"
-                    ref={register}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email">Email</label>
-                  <input
+                  className= {styles.input}
                     name="email"
-                    placeholder="bluebill1049@hotmail.com"
+                    placeholder="mailAddress@gmail.com"
                     type="email"
                     ref={register}
                   />
                 </div>
-                <input type="submit" />
+
+                <div>
+                  <label htmlFor="phoneNumber">מספר טלפון</label>
+                  <input className= {styles.input} name="phoneNumber" placeholder="052-0000000" ref={register} />
+                </div>
+
+                <div>
+                  <label htmlFor="content">תוכן הפניה</label>
+                  <textarea className={[styles.content,styles.input].join(' ')} name="content" placeholder="טקסט חופשי.." ref={register} />
+
+                  
+                  {/* <input  /> */}
+                </div>
+
+  
+
+                <input className= {styles.input} type="submit" />
               </form>
             </div>
 
           </div>
-          <Grid justify="center" className={styles.images} >
-          </Grid>
+
         </div>
       </div>
       {/* } */}
