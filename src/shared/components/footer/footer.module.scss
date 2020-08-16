@@ -1,9 +1,90 @@
+a{
+    text-decoration: none;
+    color: #b2b3b6;
+}
+
+a:active,a:hover{
+    color: #8a97be;
+}
+
 .container{
-    display: grid;
-    grid-template-columns: minmax(150px, 25%) auto;
-    width: 100%;
     background-color: #253142;
     color: #b2b3b6;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: auto minmax(250px, 25%);
+    padding-top: 2vh;
+    padding-left: 1vw;
+}
+
+.title,
+.subTitle{
+    direction: rtl;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.title{
+    font-size: 2rem;
+}
+.subTitle{
+    font-size: 1rem;
+}
+
+.mediaContainer{
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    padding-bottom: 2vh;
+}
+
+.mediaLinks{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+}
+
+.pagesNav{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+}
+
+.pageCard{
+    margin: 5px;
+}
+
+.innerTitle{
+    font-size: 2rem;
+    text-align: center;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #868c9c9a;
+}
+
+.innerTitle:hover, .innerTitle:active{
+    cursor: pointer;
+    color: #8a97be;
+}
+
+.innerSub{
+    font-size: 1rem;
+    direction: rtl;
+    text-align: center;
+}
+
+
+@media (max-width: 767px){
+    .content{
+        display: grid;
+        grid-template-columns: none;
+        width: 100%;
+        padding-top: 2vh;
+    }
+
+    .title,
+    .subTitle{
+        display: none;
+    }
 }

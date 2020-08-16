@@ -6,19 +6,6 @@ import Gallery from 'react-grid-gallery';
 import Footer from '../../shared/components/footer';
 import Loading from '../../shared/components/loading';
 import Navbar from '../../shared/components/navbar';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-
-const shuffleArray = (arr: Array<any>): Array<any> => {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * i);
-    const temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-  }
-
-  return arr;
-}
 
 const GallaryComponent = ({ history }: any): any => {
   const [data, setData] = React.useState<GalleryModel>();
@@ -41,7 +28,6 @@ const GallaryComponent = ({ history }: any): any => {
   const fetchImages = async (): Promise<void> => {
     try {
       setLoading(true);
-      console.log(`${process.env.REACT_APP_BACKEND_URL}/gallery`);
       const res: { data: GalleryModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/gallery`);
       setData(res.data);
     } catch (e) {
@@ -65,7 +51,6 @@ const GallaryComponent = ({ history }: any): any => {
   const genImages = (): Array<any> => {
     const getThumbnail = (image: any): any => {
       const size = getViewSize();
-      console.log(image.formats);
       switch (size) {
         case 1:
           return image.formats.small.url;
@@ -79,7 +64,6 @@ const GallaryComponent = ({ history }: any): any => {
     };
 
     let arr: Array<any> = [];
-    console.log(data?.Images);
     data?.Images.map((image) => {
       arr.push(
         {

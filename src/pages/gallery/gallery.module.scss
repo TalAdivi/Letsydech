@@ -26,10 +26,11 @@ h1{
 }
 
 img {
-    object-fit: scale-down;
+    object-fit: cover;
     align-content: center;
     align-self: center;
     place-content: center;
     place-self: center;
     place-items: center;
+    margin-left: 0 !important;
 }
