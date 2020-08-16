@@ -1,30 +1,64 @@
 import React from 'react';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid, GridList, GridListTile, Typography } from '@material-ui/core';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import Card from './card';
 
 import styles from './cards.module.scss';
+import { Image } from '../../../shared/models/gallery.model';
 
-const Cards = ({ title, data }: { title: string, data: Array<{ icon: string, text: string }> }) => {
+
+const getCols = (screenWidth: any) => {
+  // console.log('screenWidth -> ', screenWidth)
+
+  if (isWidthUp('lg', screenWidth)) {
+    return 5;
+  }
+
+  if (isWidthUp('md', screenWidth)) {
+    return 3;
+  }
+  return 2;
+};
+
+const Cards = ({ title, data, width }: { title: string, data: Array<Image>, width: any }) => {
+  const cols = getCols(width)
+
+  console.log('data-> ', data)
   return (
     <Grid container justify="center">
       {title !== '' ?
         <Grid className={styles.content} container spacing={2} justify='center'>
-          <Grid item xs={2}>
-            <Paper className='item'>{title}</Paper>
-          </Grid>
+
+          <Typography color={"textPrimary"} className={styles.item}>{title}</Typography>
+
         </Grid>
         : null}
       {data ?
         <Grid className={styles.content} container spacing={2} justify='center'>
-          {data.map((elem: { icon: string, text: string }, index: number): any => (
-            <Grid item xs={4} key={index + elem.icon + elem.text}>
-              <Card icon={elem.icon} text={elem.text} />
-            </Grid>
-          ))}
+          <GridList spacing={10} className={styles.list} cols={cols}>
+            {data.map((elem): any =>
+              //  {
+
+              //    console.log('elem -> ', elem) 
+              // }
+
+              (
+                // <GridListTile className={styles.gridListTitle} >
+                <Grid container alignItems="center">
+
+                  <Card icon={elem.url} text={elem.caption} />
+                </Grid>
+
+                // </GridListTile>
+              )
+
+
+            )}
+          </GridList>
         </Grid>
         : null}
     </Grid>
   );
 };
 
-export default Cards;
+export default withWidth()(Cards);

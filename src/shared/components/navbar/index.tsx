@@ -7,12 +7,13 @@ export default function Navbar({ history }: any): any {
   return (
     <div className={styles.container}>
       <AppBar position="static" color="transparent">
-        <Grid container alignItems="flex-start" justify="flex-end" direction="row">
+        <Grid container alignItems="flex-start" justify="flex-start" direction="row">
           <Router>
             <div>
-              <Tab label='gallery' onClick={() => { history.push('/gallery'); }} />
-              <Tab label='aboutUs' onClick={() => { history.push('/aboutUs'); }} />
-              <Tab label='home' onClick={() => { history.push('/'); }} />
+              <Tab label='עמוד הבית' onClick={() => { history.push('/'); }} />
+              <Tab label='אודותינו' onClick={() => { history.push('/aboutUs'); }} />
+              <Tab label='גלריית תמונות' onClick={() => { history.push('/gallery'); }} />
+              <Tab label='צרו קשר' onClick={() => { history.push('/contactUs'); }} />
             </div>
           </Router>
         </Grid>

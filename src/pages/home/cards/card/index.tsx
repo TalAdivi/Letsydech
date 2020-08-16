@@ -1,20 +1,30 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Card, CardContent, Typography, CardMedia, Grid } from '@material-ui/core';
+import styles from './card.module.scss';
 
-const SingleCard = ({ icon, text }:{ icon:string, text:string }) => {
+const SingleCard = ({ icon, text }: { icon: string, text: string }) => {
   return (
-    <div>
-      <Card>
-        <CardContent>
-          <Typography variant="h5" component="h2">
-            {icon}
-          </Typography>
-          <Typography variant="body2" component="p">
-            {text}
-          </Typography>
-        </CardContent>
-      </Card>
-    </div>
+
+    // <>
+    <Grid item xl={"auto"} alignContent="space-around">
+      <CardMedia
+          className={styles.myCardMedia}
+          component="img"
+          alt={text}
+          height="550 !important"
+          width= "370 !important"
+          image= {icon}
+          title={text}
+        />
+
+      <CardContent >
+        <Typography gutterBottom variant="subtitle1" component="h6" align="center">
+          {text}
+        </Typography>
+      </CardContent>
+    </Grid>
+
+    // {/* </> */}
   );
 };
 
