@@ -12,6 +12,7 @@ import { IHomePage } from '../../shared/models/homepage.model';
 import Axios from 'axios';
 import Loading from '../../shared/components/loading';
 import { Image } from '../../shared/models/gallery.model';
+import { url } from 'inspector';
 
 
 const Home = ({ history }: any): any => {
@@ -42,45 +43,25 @@ const Home = ({ history }: any): any => {
     <div>
       {loading ? <Loading loading={loading} /> :
         <div>
-          {/* { data?.TitleImage.url === "" ? <h2>No Content</h2> : */}
-
           <div>
             <Navbar history={history} />
-            <Grid className='bg' container spacing={2} justify='center'>
-              <Grid item xs={10}>
-                <Banner primaryText={data?.Title!} secondaryText={data?.titleText!}/>
-              </Grid>
+            <Grid className='container' container spacing={2} justify='center'>
+
+              <div className='bg' style={{backgroundImage:`url(${data?.titleImage.url})`}} > </div>
+              <Banner primaryText={data?.Title!} secondaryText={data?.titleText!} />
             </Grid>
             <Grid className='content' container spacing={2} justify='center'>
               <Grid item xs={10}>
-                <Cards title='שותפים לדרך' data={data?.SupportersImages!
-                
-                // || Array<Image>({
-                //   url: "string",
-                //   id: "string",
-                //   formats: {
-                //     large: "any",
-                //     meduim: "any",
-                //     small: "any",
-                //     thumbnail: "any",
-                //   },
-                //   height: 100,
-                //   width: 100,
-                //   alternativeText: "string",
-                //   caption: "string"
-                // })
-              } />
+                <Cards title='שותפים לדרך' data={data?.SupportersImages!} />
               </Grid>
             </Grid>
-
             <Grid className='donate' container spacing={2} justify='center'>
               <Grid item xs={10}>
-
-                <DonateUs primaryText={data?.DonationTitle! } secondaryText={data?.DonationText! } />
+                <DonateUs primaryText={data?.DonationTitle!} secondaryText={data?.DonationText!} />
               </Grid>
             </Grid>
           </div>
-          {/* } */}
+
         </div>
       }
     </div>

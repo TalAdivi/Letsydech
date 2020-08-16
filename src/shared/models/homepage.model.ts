@@ -7,7 +7,7 @@ export interface ISupporters{
 
 export interface IHomePage{
     Title:string;
-    TitleImage: Image;
+    titleImage: Image;
     titleText: string;
     SupportersImages:Array<Image>;
     SupporterTitle: string;
