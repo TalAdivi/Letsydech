@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Grid, Tab, AppBar } from '@material-ui/core';
 
+
+
 export default function Navbar({ history }: any): any {
   return (
     <div>
@@ -12,6 +14,7 @@ export default function Navbar({ history }: any): any {
               <Tab label='gallery' onClick={() => { history.push('/gallery'); }} />
               <Tab label='aboutUs' onClick={() => { history.push('/aboutUs'); }} />
               <Tab label='home' onClick={() => { history.push('/'); }} />
+              <Tab label='donate' onClick={() => { history.push('/donate'); }} />
             </div>
           </Router>
         </Grid>

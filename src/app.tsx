@@ -4,6 +4,7 @@ import MetaTags from 'react-meta-tags';
 import Home from './pages/home';
 import AboutUs from './pages/aboutUs/index';
 import Gallery from './pages/gallery';
+import Donate from './pages/donate';
 
 const App = (): any => {
   return (
@@ -17,6 +18,7 @@ const App = (): any => {
         <Route exact path="/" component={Home} />
         <Route exact path="/Gallery" component={Gallery} />
         <Route exact path="/aboutUs" component={AboutUs} />
+        <Route exact path="/Donate" component={Donate} />
       </Router>
     </div>
   );
