@@ -17,6 +17,20 @@ h1{
 }
 
 .imageGallery{
+    padding-bottom: 10vh;
     padding-left: 5vw;
     padding-right: 5vw;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+img {
+    object-fit: cover;
+    align-content: center;
+    align-self: center;
+    place-content: center;
+    place-self: center;
+    place-items: center;
+    margin-left: 0 !important;
 }

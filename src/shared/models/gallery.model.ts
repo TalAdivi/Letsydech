@@ -3,7 +3,7 @@ export interface Image {
     id: string;
     formats :{
         large: any,
-        meduim: any,
+        medium: any,
         small: any,
         thumbnail: any
     };
