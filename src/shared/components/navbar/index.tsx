@@ -12,6 +12,7 @@ export default function Navbar({ history }: any): any {
               <Tab label='גלריית תמונות' onClick={() => { history.push('/gallery'); }} />
               <Tab label='אודותינו' onClick={() => { history.push('/aboutUs'); }} />
               <Tab label='עמוד הבית' onClick={() => { history.push('/'); }} />
+              <Tab label='צרו קשר' onClick={() => { history.push('/contactUs'); }} />
             </div>
           </Router>
         </Grid>
