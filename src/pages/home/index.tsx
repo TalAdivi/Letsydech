@@ -47,8 +47,8 @@ const Home = ({ history }: any): any => {
             <Navbar history={history} />
             <Grid className='container' container spacing={2} justify='center'>
 
-              <div className='bg' style={{backgroundImage:`url(${data?.titleImage.url})`}} > </div>
-              <Banner primaryText={data?.Title!} secondaryText={data?.titleText!} />
+              <div className='bg' style={{backgroundImage:`url(${data?.TitleImage.url})`}} > </div>
+              <Banner primaryText={data?.Title!} secondaryText={data?.TitleText!} />
             </Grid>
             <Grid className='content' container spacing={2} justify='center'>
               <Grid item xs={10}>
