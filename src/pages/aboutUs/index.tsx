@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Grid, GridList, GridListTile, Typography } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
+import Footer from '../../shared/components/footer';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import { AboutUs as AboutUsModel } from '../../shared/models/aboutus.model';
 import Loading from '../../shared/components/loading';
@@ -68,6 +69,7 @@ const AboutUs = ({ history, width }: any): any => {
           }
         </div>
       }
+      <Footer history={history} />
     </div>
   );
 };

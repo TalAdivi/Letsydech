@@ -12,6 +12,14 @@ code {
     monospace;
 }
 
+h1,
+h2,
+h3,
+a,
+p,
+div{
+  margin: 0;
+}
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
@@ -55,4 +63,10 @@ code {
 
 .ReactGridGallery_tile-viewport{
   background-color: rgba(37, 49, 66, 0.014);
+}
+
+.MuiGrid-spacing-xs-2{
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
 }

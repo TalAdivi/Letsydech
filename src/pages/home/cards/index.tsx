@@ -28,36 +28,18 @@ const Cards = ({ title, data, width }: { title: string, data: Array<Image>, widt
     <Grid container justify="center">
       {title !== '' ?
         <Grid className={styles.content} container spacing={2} justify='center'>
-
           <Typography color={"textPrimary"} className={styles.item}>{title}</Typography>
-
         </Grid>
         : null}
-      {data ?
-        <Grid className={styles.content} container spacing={2} justify='center'>
-          <GridList spacing={10} className={styles.list} cols={cols}>
-            {data.map((elem): any =>
-              //  {
-
-              //    console.log('elem -> ', elem) 
-              // }
-
-              (
-                // <GridListTile className={styles.gridListTitle} >
-                <Grid container alignItems="center">
-
-                  <Card icon={elem.url} text={elem.caption} />
-                </Grid>
-
-                // </GridListTile>
-              )
-
-
-            )}
-          </GridList>
-        </Grid>
+      {data ? <div className={styles.supporters}>
+        {data.map((elem): any =>
+          <div className={styles.supporter}>
+            <Card icon={elem.url} text={elem.caption} />
+          </div>
+        )}
+      </div>
         : null}
-    </Grid>
+    </Grid >
   );
 };
 

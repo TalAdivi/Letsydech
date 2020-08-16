@@ -14,7 +14,7 @@ a:active,a:hover{
 
 .content{
     display: grid;
-    grid-template-columns: auto minmax(250px, 25%);
+    grid-template-columns: minmax(200px, 25%) auto;
     padding-top: 2vh;
     padding-left: 1vw;
 }

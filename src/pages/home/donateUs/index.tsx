@@ -9,30 +9,17 @@ import styles from './donateUs.module.scss';
 const DonateUs = ({ primaryText, secondaryText }: { primaryText: string, secondaryText: string }) => {
 
     return (
-        <Grid container justify="center">
+        <div className={styles.container}>
             {primaryText !== '' ?
-                <Grid className={styles.content} container spacing={2} justify='center'>
-
-                    <Typography color={"textPrimary"} className={styles.item}>{primaryText}</Typography>
-
-                </Grid>
+                <p className={styles.item}>{primaryText}</p>
                 : null}
             {secondaryText !== '' ?
-                <Grid className={styles.content} container spacing={2} justify='center'>
-
-                    <Typography color={"textSecondary"} className={styles.item}>{secondaryText}</Typography>
-
-                </Grid>
+                <p className={styles.secondaryItem}>{secondaryText}</p>
                 : null}
-            <Grid className={styles.content} container spacing={2} justify='center'>
-
-
-                <Button className={styles.btn} size='large' color='primary' variant="contained"> 
-                    תרומה
-                </Button>
-
-            </Grid>
-        </Grid>
+            <Button className={styles.btn} size='large' color='primary' variant="contained">
+                תרומה
+            </Button>
+        </div>
     );
 };
 

@@ -24,6 +24,10 @@ const Footer = ({ history }: any): any => {
     return (
         <div className={styles.container}>
             <div className={styles.content}>
+                <div>
+                    <p className={styles.title}>{data?.Title}</p>
+                    <p className={styles.subTitle}>{data?.Text}</p>
+                </div>
                 <div className={styles.pagesNav}>
                     <div className={styles.pageCard} onClick={() => history.push('/aboutus')}>
                         <p className={styles.innerTitle}>About us</p>
@@ -45,10 +49,6 @@ const Footer = ({ history }: any): any => {
                         <p className={styles.innerTitle}>Stories</p>
                         <p className={styles.innerSub}>תהיה מעודכן בכל הפעיליות והסיפורים שלנו</p>
                     </div>
-                </div>
-                <div>
-                    <p className={styles.title}>{data?.Title}</p>
-                    <p className={styles.subTitle}>{data?.Text}</p>
                 </div>
             </div>
             <div className={styles.mediaContainer}>

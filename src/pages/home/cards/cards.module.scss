@@ -19,3 +19,15 @@
  .item{
      font-weight: 600 !important;
  }
+
+ .supporters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .supporter {
+    flex: 1 1 150px; /*  Stretching: */
+    flex: 0 1 150px; /*  No stretching: */
+    margin: 20px;
+  }
