@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 
 
 
-import './home.scss';
+import styles from './home.module.scss';
 import Navbar from '../../shared/components/navbar';
 import Banner from './banner';
 import Cards from './cards';
@@ -16,8 +16,6 @@ import { url } from 'inspector';
 
 
 const Home = ({ history }: any): any => {
-  // const cards: Array<{ icon: string, text: string }> = [{ icon: '', text: 'Test' }, { icon: '', text: 'Test' }, { icon: '', text: 'Test' }];
-  // const supporters: Array<ISupporters> = [];
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<IHomePage>();
 
@@ -45,17 +43,17 @@ const Home = ({ history }: any): any => {
         <div>
           <div>
             <Navbar history={history} />
-            <Grid className='container' container spacing={2} justify='center'>
+            <Grid className={styles.container} container spacing={2} justify='center'>
 
-              <div className='bg' style={{backgroundImage:`url(${data?.TitleImage.url})`}} > </div>
+              <div className={styles.bg} style={{backgroundImage:`url(${data?.TitleImage.url})`}} > </div>
               <Banner primaryText={data?.Title!} secondaryText={data?.TitleText!} />
             </Grid>
-            <Grid className='content' container spacing={2} justify='center'>
+            <Grid className={styles.content} container spacing={2} justify='center'>
               <Grid item xs={10}>
                 <Cards title='שותפים לדרך' data={data?.SupportersImages!} />
               </Grid>
             </Grid>
-            <Grid className='donate' container spacing={2} justify='center'>
+            <Grid className={styles.donate} container spacing={2} justify='center'>
               <Grid item xs={10}>
                 <DonateUs primaryText={data?.DonationTitle!} secondaryText={data?.DonationText!} />
               </Grid>
