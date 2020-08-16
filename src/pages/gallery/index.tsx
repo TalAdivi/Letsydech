@@ -3,7 +3,7 @@ import Axios from 'axios';
 import styles from './gallery.module.scss';
 import { Gallery as GalleryModel } from '../../shared/models/gallery.model';
 import Gallery from 'react-grid-gallery';
-
+import Footer from '../../shared/components/footer';
 import Loading from '../../shared/components/loading';
 import Navbar from '../../shared/components/navbar';
 import GridList from '@material-ui/core/GridList';
@@ -24,6 +24,16 @@ const GallaryComponent = ({ history }: any): any => {
   const [data, setData] = React.useState<GalleryModel>();
   const [loading, setLoading] = React.useState(false);
 
+  const dup = (arr: Array<any>): void => {
+    arr.forEach(element => {
+      arr.push(element);
+      arr.push(element);
+      arr.push(element);
+      arr.push(element);
+      arr.push(element);
+    });
+  };
+
   React.useEffect((): any => {
     fetchImages();
   }, []);
@@ -34,7 +44,6 @@ const GallaryComponent = ({ history }: any): any => {
       console.log(`${process.env.REACT_APP_BACKEND_URL}/gallery`);
       const res: { data: GalleryModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/gallery`);
       setData(res.data);
-      console.log(res.data);
     } catch (e) {
       console.log(e);
     } finally {
@@ -56,18 +65,21 @@ const GallaryComponent = ({ history }: any): any => {
   const genImages = (): Array<any> => {
     const getThumbnail = (image: any): any => {
       const size = getViewSize();
+      console.log(image.formats);
       switch (size) {
         case 1:
           return image.formats.small.url;
         case 2:
-          return image.formats.meduim.url;
+          return image.formats.medium.url;
         case 3:
           return image.formats.large.url;
         case 4:
           return image.formats.large.url;
       }
     };
+
     let arr: Array<any> = [];
+    console.log(data?.Images);
     data?.Images.map((image) => {
       arr.push(
         {
@@ -94,6 +106,7 @@ const GallaryComponent = ({ history }: any): any => {
           </div>
         </>
       }
+      <Footer />
     </div >
   );
 };
