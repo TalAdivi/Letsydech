@@ -60,7 +60,7 @@ const GallaryComponent = ({ history }: any): any => {
         case 1:
           return image.formats.small.url;
         case 2:
-          return image.formats.meduim.url;
+          return image.formats.medium.url;
         case 3:
           return image.formats.large.url;
         case 4:

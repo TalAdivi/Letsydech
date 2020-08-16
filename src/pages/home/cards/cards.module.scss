@@ -1,3 +1,21 @@
 .content{
-    margin: 0 5px !important;
+    margin: 0 10px !important;
 }
+
+.list{    
+    flex-wrap: nowrap;
+    transform: translateZ(0);
+  }
+
+.gridListTitle{
+    margin: 20px auto 20px auto;
+    // height: 225px !important;
+    // flex:0;
+    background-color: khaki;
+    // align-items: center;
+
+ }
+
+ .item{
+     font-weight: 600 !important;
+ }
