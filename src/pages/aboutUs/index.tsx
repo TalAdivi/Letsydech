@@ -71,6 +71,16 @@ const AboutUs = ({ history, width }: any): any => {
               <div className={styles.gallery}>
                 <ImageGallery showFullscreenButton={false} showThumbnails={false} showIndex={false} isRTL={true} items={genImages()} />
               </div>
+              <div className={styles.licensesContainer}>
+                <h3>אישורים:</h3>
+                <div className={styles.licenses}>
+                  {data?.Licenses.map((license) =>
+                    <div key={license.id} className={styles.imageHolder}>
+                      <a href={license.url} target='_black'><img src={license.url} /></a>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           }
         </div>

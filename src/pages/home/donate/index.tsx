@@ -1,13 +1,8 @@
 import React from 'react';
-import { Grid, Typography, Button } from '@material-ui/core';
-// import Card from './card';
+import { Button } from '@material-ui/core';
+import styles from './donate.module.scss';
 
-import styles from './donateUs.module.scss';
-
-
-
-const DonateUs = ({ primaryText, secondaryText }: { primaryText: string, secondaryText: string }) => {
-
+const Donate = ({ primaryText, secondaryText }: { primaryText: string, secondaryText: string }) => {
     return (
         <div className={styles.container}>
             {primaryText !== '' ?
@@ -23,4 +18,4 @@ const DonateUs = ({ primaryText, secondaryText }: { primaryText: string, seconda
     );
 };
 
-export default DonateUs;
+export default Donate;
