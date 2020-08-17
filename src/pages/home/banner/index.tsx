@@ -20,7 +20,7 @@ const Banner = ({ primaryText, secondaryText, history }: any) => {
   };
 
   return (
-    <Grid container spacing={2} justify='center'>
+    <div className={styles.container}>
       <Grid className={[styles.item, styles.bgImg].join(' ')} item xs={12}>
         <p className={styles.title}>
           {primaryText}
@@ -37,7 +37,7 @@ const Banner = ({ primaryText, secondaryText, history }: any) => {
           </Button>
         </div>
       </Grid>
-    </Grid>
+    </div>
   );
 };
 
