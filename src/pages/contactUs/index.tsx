@@ -77,8 +77,13 @@ const ContactUs = ({ history, width }: any): any => {
       <div>
         <div>
           <div className={styles.bg}>
-            <h1 className={styles.title}>אנחנו לצידך</h1>
-            <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >השאירו פרטים וניצור קשר בהקדם</Typography>
+            <div className={styles.container}> 
+
+            <p className={styles.title}>אנחנו לצידך</p>
+            <p  className={styles.subTitle} >השאירו פרטים וניצור קשר בהקדם</p>
+            </div>
+
+
             <div className={styles.main}>
               <form className={styles.myForm} onSubmit={handleSubmit(onSubmit)}>
                 <div>
@@ -106,7 +111,7 @@ const ContactUs = ({ history, width }: any): any => {
                   <label htmlFor="freeText">תוכן הפניה</label>
                   <textarea className={[styles.content,styles.input].join(' ')} name="freeText" placeholder="טקסט חופשי.." ref={register} />
                 </div>
-                <input className= {styles.input} type="submit" />
+                <input className= {styles.input} type="submit" value='שילחי' />
               </form>
             </div>
 

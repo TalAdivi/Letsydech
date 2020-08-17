@@ -3,40 +3,29 @@
   min-height: 60vh;
 }
 
-// body {
-//   background: #0e101c;
-//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-//     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-//     sans-serif;
-// }
-
 .myForm {
   max-width: 300px;
   margin: 0 auto;
 }
 
-.title {
-  font-weight: 100;
-  color: white;
-  text-align: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgb(79, 98, 148);
+.container{
+  display: grid;
+  place-items: center;
+  padding-top: 5vh;
+  padding-bottom: 1vh;
 }
 
-// .form {
-//   background: #0e101c;
-//   max-width: 400px;
-//   margin: 0 auto;
-// }
+.subTitle{
+  font-size: 1rem;
+  font-weight: 700 ;
+  color: #0000008c;
+}
 
-// p {
-//   color: #bf1650;
-// }
-
-// p::before {
-//   display: inline;
-//   content: "⚠ ";
-// }
+.title{
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: #000000bf;
+}
 
 .input {
   display: block;
@@ -95,6 +84,30 @@ input[type="button"]:hover {
 input[type="button"],
 input[type="submit"] {
   -webkit-appearance: none;
+}
+
+@media (max-width: 767px){
+  .supporters{
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 565px){
+  .supporters{
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 425px){
+  .supporters{
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 375px){
+  .supporters{
+      grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .main {
