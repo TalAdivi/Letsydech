@@ -30,24 +30,24 @@ const Footer = ({ history }: any): any => {
                 </div>
                 <div className={styles.pagesNav}>
                     <div className={styles.pageCard} onClick={() => history.push('/aboutus')}>
-                        <p className={styles.innerTitle}>About us</p>
-                        <p className={styles.innerSub}>בוא לקראו עוד עלינו</p>
+                        <p className={styles.innerTitle}>אודותינו</p>
+                        <p className={styles.innerSub}>קיראו עלינו עוד עלינו</p>
                     </div>
                     <div className={styles.pageCard} onClick={() => history.push('/gallery')}>
-                        <p className={styles.innerTitle}>Gallery</p>
-                        <p className={styles.innerSub}>בוא לראות את התומות שלנו</p>
+                        <p className={styles.innerTitle}>גלריית תמונות</p>
+                        <p className={styles.innerSub}>צפו בגלריית התמונות שלנו</p>
                     </div>
                     <div className={styles.pageCard} onClick={() => history.push('/donate')}>
-                        <p className={styles.innerTitle}>Donate</p>
-                        <p className={styles.innerSub}>בוא לתמוך בנו</p>
+                        <p className={styles.innerTitle}>תרומה</p>
+                        <p className={styles.innerSub}>בואו לתמוך בנו</p>
                     </div>
                     <div className={styles.pageCard} onClick={() => history.push('/contactus')}>
-                        <p className={styles.innerTitle}>Contact Us</p>
+                        <p className={styles.innerTitle}>צרו קשר</p>
                         <p className={styles.innerSub}>תיצרו איתנו קשר</p>
                     </div>
                     <div className={styles.pageCard} onClick={() => history.push('/stories')}>
-                        <p className={styles.innerTitle}>Stories</p>
-                        <p className={styles.innerSub}>תהיה מעודכן בכל הפעיליות והסיפורים שלנו</p>
+                        <p className={styles.innerTitle}>סיפורים</p>
+                        <p className={styles.innerSub}>חוויות אישיות </p>
                     </div>
                 </div>
             </div>
