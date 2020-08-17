@@ -1,0 +1,26 @@
+.content{
+    margin: 0 10px !important;
+}
+
+.item{
+    font-size: 2rem;
+    font-weight: 600 !important;
+}
+
+.secondaryItem{
+    font-size: 1rem;
+    font-weight: 300 !important;
+}
+
+.btn{    
+    display: grid;
+    place-items: center;
+    margin-top: 2vh !important
+}
+
+.container{
+    display: grid;
+    place-items: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}

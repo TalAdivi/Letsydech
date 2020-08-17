@@ -1,0 +1,19 @@
+.p{
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+img{
+    object-fit: scale-down;
+}
+
+.visual {
+    height: 100px;
+    width: 100%;
+}

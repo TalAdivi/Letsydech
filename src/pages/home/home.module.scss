@@ -1,0 +1,32 @@
+.content{
+    margin-top: 100px !important;
+}
+.bg{
+    position: absolute;
+    z-index: -1;
+    min-height: 50vh !important;
+    margin-bottom: 15px !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // background: url("https://res.cloudinary.com/dmezfnuzk/image/upload/v1597418383/small_from_You_Tube_5413370c11.png") center center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .5;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.donate{
+    background-color: lightblue;
+    min-height: 35vh;
+}
+
+.container{
+    position: relative;
+    z-index: 1;
+}

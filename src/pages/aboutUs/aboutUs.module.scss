@@ -1,16 +1,10 @@
-.bg{
-  background-color: #666666;    
-  .item{
-    margin-top: 10vh;
-  }
-}
 
 .images{
   margin: 30px auto 0 auto !important;
   overflow: hidden;
   width: 80vw !important;
   
-  
+  padding-bottom: 10vh;
   .list{    
     flex-wrap: nowrap;
     transform: translateZ(0);
@@ -33,6 +27,10 @@
   padding-bottom: 50px;
 }
 
-.bg{
-  background-color: lightblue;
+.gallery{
+  margin-bottom: 10vh;
+  img{
+    height: 30vh;
+    width: 30vw;
+  }
 }
