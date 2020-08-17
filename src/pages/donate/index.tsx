@@ -43,9 +43,9 @@ const Donate = ({ history, width }: any): any => {
                 <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >{data?.Text}</Typography>
               </div>
               <Grid justify="center" className={styles.images} >
-                <GridList className={styles.list} cols={1} >
+                {/* <GridList className={styles.list} cols={1} >
 
-                </GridList>
+                </GridList> */}
               </Grid>
             </div>
           
