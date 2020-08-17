@@ -3,7 +3,7 @@ import styles from './snippets.module.scss';
 import Axios from 'axios';
 
 const Snippets = (): any => {
-    const [data, setData] = React.useState<any>();
+    const [data, setData] = React.useState<Array<{Title: string, Text: string, Image: string}>>();
 
     React.useEffect((): any => {
         fetchData();
@@ -11,7 +11,7 @@ const Snippets = (): any => {
 
     const fetchData = async (): Promise<void> => {
         try {
-            const res: { data: any } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/snippets`);
+            const res: { data: Array<{Title: string, Text: string, Image: string}> } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/snippets`);
             setData(res.data);
             console.log(res.data);
         } catch (e) {
@@ -21,7 +21,6 @@ const Snippets = (): any => {
 
     return (
         <>
-        {console.log(data)}
             {!data ? null :
                 <div className={styles.container}>
                     {data?.map((snippet: any) =>
