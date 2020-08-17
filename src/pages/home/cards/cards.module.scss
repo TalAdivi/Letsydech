@@ -29,3 +29,27 @@
       display: grid;
       place-items: center;
   }
+
+@media (max-width: 767px){
+    .supporters{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 565px){
+    .supporters{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 425px){
+    .supporters{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 375px){
+    .supporters{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
