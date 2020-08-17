@@ -1,14 +1,19 @@
-.myCard{
-    // height: 300px !important;
+.p{
+    text-align: center;
 }
 
-.myCardMedia{
-    // min-height: 200px !important;
-    // margin-bottom: 50px;
-
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: space-between;
 }
 
-.margin{
-    // height: 300px !important;
-    // font-weight: 900;
+img{
+    object-fit: scale-down;
+}
+
+.visual {
+    height: 100px;
+    width: 100%;
 }
