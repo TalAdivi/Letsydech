@@ -6,6 +6,7 @@ import AboutUs from './pages/aboutUs/index';
 import Gallery from './pages/gallery';
 import Donate from './pages/donate';
 import ContactUs from './pages/contactUs'
+import Stories from './pages/stories'
 
 const App = (): any => {
   return (
@@ -21,6 +22,7 @@ const App = (): any => {
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/contactUs" component={ContactUs} />
         <Route exact path="/Donate" component={Donate} />
+        <Route exact path="/stories" component={Stories} />
       </Router>
     </div>
   );
