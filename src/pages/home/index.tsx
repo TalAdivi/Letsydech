@@ -6,7 +6,7 @@ import Navbar from '../../shared/components/navbar';
 import Footer from '../../shared/components/footer';
 import Banner from './banner';
 import Cards from './cards';
-import DonateUs from './donateUs';
+import Donate from './donate';
 import Snippets from './snippets';
 import { HomePage } from '../../shared/models/homepage.model';
 import Loading from '../../shared/components/loading';
@@ -38,18 +38,18 @@ const Home = ({ history }: any): any => {
             <Navbar history={history} />
             <Grid className={styles.container} container spacing={2} justify='center'>
               <div className={styles.bg} style={{ backgroundImage: `url(${data?.TitleImage.url})` }} > </div>
-              <Banner primaryText={data?.Title!} secondaryText={data?.TitleText!} />
+              <Banner primaryText={data?.Title!} secondaryText={data?.TitleText!} history={history} />
             </Grid>
             <Grid className={styles.content} container spacing={2} justify='center'>
-              <Snippets/>
+              <Snippets />
             </Grid>
             <Grid className={styles.content} container spacing={2} justify='center'>
               <Grid item xs={10}>
                 <Cards title='שותפים לדרך' data={data?.SupportersImages!} />
               </Grid>
             </Grid>
-            <Grid className={styles.donate} container spacing={2} justify='center'>
-              <DonateUs primaryText={data?.DonationTitle!} secondaryText={data?.DonationText!} />
+            <Grid id="support" className={styles.donate} container spacing={2} justify='center'>
+              <Donate primaryText={data?.DonationTitle!} secondaryText={data?.DonationText!} />
             </Grid>
           </div>
 

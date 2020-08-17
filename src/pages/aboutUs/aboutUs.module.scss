@@ -34,3 +34,25 @@
     width: 50vw;
   }
 }
+
+
+.licensesContainer{
+  h3{
+    text-align: center;
+    font-size: 1.5rem;
+    direction: rtl;
+    margin-bottom: 3vh;
+  }
+  .licenses{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10vh;
+
+    .imageHolder{
+      flex: 1 1 360px; /*  Stretching: */
+      flex: 0 1 360px; /*  No stretching: */
+      margin: 5px;
+    }
+  }
+}

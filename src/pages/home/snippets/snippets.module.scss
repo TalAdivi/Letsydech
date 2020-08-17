@@ -3,7 +3,7 @@
     height: auto;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     place-items: center;
 }
 
@@ -14,7 +14,7 @@
     padding: 1rem;
     justify-content: space-between;
     place-items: center;
-    background-color: #edf0f8;
+    background-color: #DEDCD8;
     margin: 5px;
     width: 15vw;
     border-radius: 10px;
