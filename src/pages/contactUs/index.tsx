@@ -45,10 +45,8 @@ const ContactUs = ({ history, width }: any): any => {
 
   const fetchData = async (): Promise<void> => {
     try {
-      console.log(`${process.env.REACT_APP_BACKEND_URL}/info`);
       const res: { data: IInfo } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/info`);
       setData(res.data);
-      console.log('res.data --> ', res.data);
        postRequestParams.sender = res.data?.Email!;
       postRequestParams.message.subject = res.data?.MailSubject!;
     } catch (e) {

@@ -22,8 +22,6 @@ const getCols = (screenWidth: any) => {
 
 const Cards = ({ title, data, width }: { title: string, data: Array<Image>, width: any }) => {
   const cols = getCols(width)
-
-  console.log('data-> ', data)
   return (
     <Grid container justify="center">
       {title !== '' ?

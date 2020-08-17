@@ -1,11 +1,11 @@
 import { Image} from './gallery.model'
 
-export interface ISupporters{
+export interface Supporters{
     SupporterImage:Image;
     DonationTitle: string;
 }
 
-export interface IHomePage{
+export interface HomePage{
     Title:string;
     TitleImage: Image;
     TitleText: string;
@@ -14,5 +14,4 @@ export interface IHomePage{
     SupporterText: string;
     DonationTitle: string;
     DonationText: string;
-
 }
