@@ -1,0 +1,45 @@
+.container{
+    background-color: #DEDCD8;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 5vh;
+}
+
+.card{
+
+    display: grid;
+    grid-template-columns: minmax(320px, 50%) 1fr;
+    place-items: center;
+    margin: 5px;
+    width: 70vw;
+    font-size: 1.2rem;
+
+    border-radius: 10px;
+    h3 {
+        font-size: 2rem;
+        margin: 5px;
+        margin-bottom:15px;
+    }
+
+    img{
+        max-height:50vh;
+    }
+
+    .content{
+        padding-right: 5vw;
+        padding-left: 5vw;
+        padding-top: 5vh;
+    }
+}
+
+@media (max-width: 1024px){
+    .card{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: auto auto;
+    }
+    
+    .icon{
+        margin-top: 5vh;
+    }
+}
