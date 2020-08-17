@@ -16,6 +16,7 @@ export default function Navbar({ history }: any): any {
               <Tab label='אודותינו' onClick={() => { history.push('/aboutUs'); }} />
               <Tab label='גלריית תמונות' onClick={() => { history.push('/gallery'); }} />
               <Tab label='צרו קשר' onClick={() => { history.push('/contactUs'); }} />
+              <Tab label='תרומות' onClick={() => { history.push('/donate'); }} />
             </div>
           </Router>
         </Grid>
