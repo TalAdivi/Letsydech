@@ -1,16 +1,7 @@
-.bg{
-  background-color: #666666;    
-  .item{
-    margin-top: 10vh;
-  }
-}
-
 .images{
   margin: 30px auto 0 auto !important;
   overflow: hidden;
   width: 80vw !important;
-  
-  
   .list{    
     flex-wrap: nowrap;
     transform: translateZ(0);
@@ -33,6 +24,38 @@
   padding-bottom: 50px;
 }
 
-.bg{
-  background-color: lightblue;
+.container {
+  display: grid;
+  place-items: center;
+  height: 76vh;
+}
+
+
+.paymentBox{
+
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.alignInputs{
+  background-color: rgba(222, 184, 135, 0.541);
+  flex: 0 1 auto; /*  No stretching: */
+  margin: 10px ;
+  
+  
+}
+
+.dunationSum{
+  // margin-bottom: 3vh;
+}
+
+.inputColor{
+  background-color: #DEDCD8;
+  border-radius: 6px;
+  
+}
+
+.amountToDonate{
+  font-size: 1.5rem;
 }
