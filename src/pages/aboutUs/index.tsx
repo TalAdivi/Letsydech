@@ -3,28 +3,14 @@ import Axios from 'axios';
 import { Typography } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
 import Footer from '../../shared/components/footer';
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import { AboutUs as AboutUsModel } from '../../shared/models/aboutus.model';
 import Loading from '../../shared/components/loading';
 import styles from './aboutUs.module.scss';
 import ImageGallery from 'react-image-gallery';
 
-const getCols = (screenWidth: any) => {
-  console.log('screenWidth -> ', screenWidth)
-  if (isWidthUp('lg', screenWidth)) {
-    return 5;
-  }
-
-  if (isWidthUp('md', screenWidth)) {
-    return 3;
-  }
-  return 2;
-};
-
 const AboutUs = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<AboutUsModel>();
-  const cols = getCols(width)
   React.useEffect((): any => {
     fetchData();
   }, []);
@@ -90,5 +76,5 @@ const AboutUs = ({ history, width }: any): any => {
   );
 };
 
-export default withWidth()(AboutUs);
+export default AboutUs;
 

@@ -1,0 +1,24 @@
+.container{
+    display: grid;
+    place-items: center;
+
+    .text{
+        margin-bottom: 5vh;
+        display: grid;
+        place-items: center;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color: #253142;
+        width: 70vw;
+        p{
+            padding-bottom: 5vh;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.storiesContainer{
+    display: grid;
+    place-items: center;
+    margin-bottom: 5vh;
+}
