@@ -23,14 +23,14 @@ h1{
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: hidden;
-}
 
-img {
-    object-fit: cover;
-    align-content: center;
-    align-self: center;
-    place-content: center;
-    place-self: center;
-    place-items: center;
-    margin-left: 0 !important;
+    img {
+        object-fit: cover;
+        align-content: center;
+        align-self: center;
+        place-content: center;
+        place-self: center;
+        place-items: center;
+        margin-left: 0 !important;
+    }
 }
