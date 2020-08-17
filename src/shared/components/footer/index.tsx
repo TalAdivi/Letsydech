@@ -16,7 +16,6 @@ const Footer = ({ history }: any): any => {
         try {
             const res: { data: { Title: string, Text: string, Phone: string, Email: string, Facebook: string, Instagram: string } } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/footer`);
             setData(res.data);
-            console.log(res.data);
         } catch (e) {
             console.log(e);
         }
