@@ -7,6 +7,7 @@ import Loading from '../../shared/components/loading';
 import styles from './donate.module.scss';
 import { PayPalButton } from "react-paypal-button-v2";
 import Footer from '../../shared/components/footer'
+import ReactMarkdown from "react-markdown";
 
 
 const Donate = ({ history, width }: any): any => {
@@ -48,9 +49,8 @@ const Donate = ({ history, width }: any): any => {
         <div className={styles.container}>
           <div >
             <h1>{data?.Title}</h1>
-            <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >{data?.Text}</Typography>
+            <ReactMarkdown source={data?.Text}/>
           </div>
-
 
           <div className={styles.paymentBox}>
             <div className={styles.alignInputs}>
@@ -86,7 +86,7 @@ const Donate = ({ history, width }: any): any => {
           </div>
         </div>
       }
-      <Footer />
+      <Footer history={history}/>
     </div>
   );
 };

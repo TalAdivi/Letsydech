@@ -55,7 +55,7 @@ const Stories = ({ history }: any): any => {
           </div>
         </>
       }
-      <Footer />
+      <Footer history={history}/>
     </div>
   )
 }

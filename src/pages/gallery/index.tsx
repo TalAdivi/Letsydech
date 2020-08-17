@@ -90,7 +90,7 @@ const GallaryComponent = ({ history }: any): any => {
           </div>
         </>
       }
-      <Footer />
+      <Footer history={history}/>
     </div >
   );
 };
