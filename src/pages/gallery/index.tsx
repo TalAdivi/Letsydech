@@ -53,13 +53,13 @@ const GallaryComponent = ({ history }: any): any => {
       const size = getViewSize();
       switch (size) {
         case 1:
-          return image.formats.small.url;
+          return image.formats.small ? image.formats.small.url : image.url;
         case 2:
-          return image.formats.medium.url;
+          return image.formats.medium ? image.formats.medium.url : image.url;
         case 3:
-          return image.formats.large.url;
+          return image.formats.large ? image.formats.large.url : image.url ;
         case 4:
-          return image.formats.large.url;
+          return image.formats.large ? image.formats.large.url : image.url ;
       }
     };
 

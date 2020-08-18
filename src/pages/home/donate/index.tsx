@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import styles from './donate.module.scss';
 
-const Donate = ({ primaryText, secondaryText }: { primaryText: string, secondaryText: string }) => {
+const Donate = ({ primaryText, secondaryText, history }: any) => {
     return (
         <div className={styles.root}>
             <div className={styles.container}>
