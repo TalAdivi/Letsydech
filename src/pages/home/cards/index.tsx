@@ -26,7 +26,7 @@ const Cards = ({ title, data, width }: { title: string, data: Array<Image>, widt
     <Grid container justify="center">
       {title !== '' ?
         <Grid className={styles.content} container spacing={2} justify='center'>
-          <Typography color={"textPrimary"} className={styles.item}>{title}</Typography>
+          <h4 color={"textPrimary"} className={styles.item}>{title}</h4>
         </Grid>
         : null}
       {data ? <div className={styles.supporters}>
