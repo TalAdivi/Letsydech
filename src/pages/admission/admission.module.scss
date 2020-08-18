@@ -1,0 +1,58 @@
+
+.images{
+  margin: 30px auto 0 auto !important;
+  overflow: hidden;
+  width: 80vw !important;
+  
+  padding-bottom: 10vh;
+  .list{    
+    flex-wrap: nowrap;
+    transform: translateZ(0);
+  }
+}
+
+.text1Margin{
+  width:70%;
+  margin: 0 auto 0 auto !important;
+}
+
+.text2Margin{
+  width:70%;
+  margin: 70px auto 0 auto !important;
+}
+
+.text3Margin{
+  width:70%;
+  margin: 40px auto 0 auto !important;
+  padding-bottom: 50px;
+}
+
+.gallery{
+  margin-bottom: 10vh;
+  img{
+    height: 50vh;
+    width: 50vw;
+  }
+}
+
+
+.licensesContainer{
+  h3{
+    text-align: center;
+    font-size: 1.5rem;
+    direction: rtl;
+    margin-bottom: 3vh;
+  }
+  .licenses{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10vh;
+
+    .imageHolder{
+      flex: 1 1 360px; /*  Stretching: */
+      flex: 0 1 360px; /*  No stretching: */
+      margin: 5px;
+    }
+  }
+}

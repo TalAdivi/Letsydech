@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import styles from './donate.module.scss';
 
-const Donate = ({ primaryText, secondaryText }: { primaryText: string, secondaryText: string }) => {
+const Donate = ({ primaryText, secondaryText, history }: any) => {
     return (
         <div className={styles.container}>
             {primaryText !== '' ?
@@ -11,7 +11,7 @@ const Donate = ({ primaryText, secondaryText }: { primaryText: string, secondary
             {secondaryText !== '' ?
                 <p className={styles.secondaryItem}>{secondaryText}</p>
                 : null}
-            <Button className={styles.btn} size='large' color='primary' variant="contained">
+            <Button className={styles.btn} size='large' color='primary' variant="contained" onClick={() => {history.push('/donate')}}>
                 תרומה
             </Button>
         </div>
