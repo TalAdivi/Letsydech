@@ -4,16 +4,18 @@ import styles from './donate.module.scss';
 
 const Donate = ({ primaryText, secondaryText, history }: any) => {
     return (
-        <div className={styles.container}>
-            {primaryText !== '' ?
-                <p className={styles.item}>{primaryText}</p>
-                : null}
-            {secondaryText !== '' ?
-                <p className={styles.secondaryItem}>{secondaryText}</p>
-                : null}
-            <Button className={styles.btn} size='large' color='primary' variant="contained" onClick={() => {history.push('/donate')}}>
-                תרומה
+        <div className={styles.root}>
+            <div className={styles.container}>
+                {primaryText !== '' ?
+                    <p className={styles.item}>{primaryText}</p>
+                    : null}
+                {secondaryText !== '' ?
+                    <p className={styles.secondaryItem}>{secondaryText}</p>
+                    : null}
+                <Button className={styles.btn} size='large' color='primary' variant="contained">
+                    תרומה
             </Button>
+            </div>
         </div>
     );
 };

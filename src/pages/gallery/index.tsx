@@ -10,18 +10,12 @@ import Navbar from '../../shared/components/navbar';
 const GallaryComponent = ({ history }: any): any => {
   const [data, setData] = React.useState<GalleryModel>();
   const [loading, setLoading] = React.useState(false);
-
-  const dup = (arr: Array<any>): void => {
-    arr.forEach(element => {
-      arr.push(element);
-      arr.push(element);
-      arr.push(element);
-      arr.push(element);
-      arr.push(element);
-    });
-  };
+  const [setNav, setSetNav] = React.useState(window.innerWidth);
 
   React.useEffect((): any => {
+    window.addEventListener('resize', () => {
+      setSetNav(window.innerWidth);
+    });
     fetchImages();
   }, []);
 
@@ -38,11 +32,11 @@ const GallaryComponent = ({ history }: any): any => {
   };
 
   const getViewSize = (): number => {
-    if (1920 <= window.innerWidth)
+    if (1920 <= setNav)
       return 4;
-    if (1280 <= window.innerWidth)
+    if (1280 <= setNav)
       return 3;
-    if (960 <= window.innerWidth)
+    if (960 <= setNav)
       return 2;
 
     return 1;
@@ -50,7 +44,12 @@ const GallaryComponent = ({ history }: any): any => {
 
   const genImages = (): Array<any> => {
     const getThumbnail = (image: any): any => {
-      console.log('image --> ', image)
+      if(!image.formats.small || !image.formats.medium || !image.formats.large )
+        if(!image.formats.thumbnail)
+          return image.url;
+        else
+          return image.formats.thumbnail.url;
+
       const size = getViewSize();
       switch (size) {
         case 1:

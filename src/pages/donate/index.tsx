@@ -39,7 +39,7 @@ const Donate = ({ history, width }: any): any => {
     /** Here you can call your backend API
       endpoint and update the database */
     console.log(details, data);
-    
+
   }
 
   return (
@@ -49,39 +49,26 @@ const Donate = ({ history, width }: any): any => {
         <div className={styles.container}>
           <div >
             <h1>{data?.Title}</h1>
-            <ReactMarkdown source={data?.Text}/>
+            <ReactMarkdown source={data?.Text} />
           </div>
-
           <div className={styles.paymentBox}>
             <div className={styles.alignInputs}>
-              <Button variant="contained" onClick={() => setCurrAmount(10)}>10₪</Button>
-              
+              <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(10)}>10₪</Button>
             </div>
             <div className={styles.alignInputs}>
-              <Button variant="contained" onClick={() => setCurrAmount(50)} >50₪</Button>
+              <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(50)} >50₪</Button>
             </div>
             <div className={styles.alignInputs}>
-              <Button variant="contained" onClick={() => setCurrAmount(100)}>100₪</Button>
+              <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(100)}>100₪</Button>
             </div>
             <div className={[styles.alignInputs, styles.inputColor].join(' ')}>
-
               <Input disableUnderline={true} type='number' placeholder='סכום ידני...' onChange={(event) => {
-                // console.log(typeof Number(event.target.value))
                 setCurrAmount(Number(event.target.value))
               }} />
             </div>
           </div>
           <div className={styles.dunationSum}>
             <p className={styles.amountToDonate}>{`סכום לתרומה  ${currAmount}₪`}</p>
-            {/* <PayPalButton
-              amount={currAmount}
-              onSuccess={(details: any, data: any) => onSuccess(details, data)}
-              options={{
-                clientId: process.env.REACT_APP_PAYPAL_CLINET_ID,
-                currency: "ILS"
-              }}
-            /> */}
-        
           </div>
           <div className={styles.center}>
             <PayPalButton
@@ -95,7 +82,7 @@ const Donate = ({ history, width }: any): any => {
           </div>
         </div>
       }
-      <Footer history={history}/>
+      <Footer history={history} />
     </div>
   );
 };

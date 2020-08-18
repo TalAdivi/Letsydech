@@ -17,7 +17,6 @@ const Home = ({ history }: any): any => {
 
   React.useEffect((): any => {
     fetchData();
-
   }, []);
 
   const fetchData = async (): Promise<void> => {

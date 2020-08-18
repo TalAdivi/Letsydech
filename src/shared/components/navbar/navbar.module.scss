@@ -1,4 +1,80 @@
+.root{
+    header,
+    div{
+        opacity: 1 !important;
+    }
+}
+
 .container{
-    background-color: #253142;
-    color: #b2b3b6;
+    background-color: #0081a7;
+    color: #fdfcdc !important;
+
+    display: grid;
+    grid-template-columns: minmax(150px, 10%) 1fr;
+    place-items: center;
+
+    .logo{
+        padding: 15px;
+    }
+    .logo:hover, .logo:active{
+        cursor: pointer;
+    }
+
+    button{
+        color: #fdfcdc;
+        opacity: 100;
+    }
+
+    .navDrawer{
+        display: block;
+        float: left;
+        left: 0;
+    }
+}
+
+.listItem{
+    padding: 10px;
+    color: #fdfcdc;
+    text-align: center;
+}
+
+
+.listItem:hover, .listItem:active{
+    color: #fed9b7;
+}
+
+
+@media (max-width: 1113px){
+    .container{
+        grid-template-columns: minmax(150px, 10%) 150vw;
+
+    }
+}
+
+@media (max-width: 800px){
+    .container{
+        grid-template-columns: minmax(150px, 10%) 140vw;
+
+    }
+}
+
+@media (max-width: 650px){
+    .container{
+        grid-template-columns: minmax(150px, 10%) 120vw;
+
+    }
+}
+
+@media (max-width: 450px){
+    .container{
+        grid-template-columns: minmax(150px, 10%) 100vw;
+
+    }
+}
+
+@media (max-width: 390px){
+    .container{
+        grid-template-columns: minmax(150px, 10%) 80vw;
+
+    }
 }

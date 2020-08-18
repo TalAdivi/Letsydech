@@ -1,6 +1,6 @@
 .item{
     margin-top: 6vh !important;
-    min-height: 35vh;;
+    min-height: 40vh;
     display: grid;
     place-items: center;
     background-color: transparent !important;
@@ -33,16 +33,17 @@
 }
 
 .title{
-    font-size: 3.8rem;
-    font-weight: bolder;
-    color: #000000bf;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000000;
     margin: 0 auto 0 auto;
 }
 .subTitle{
-    font-size: 1.5rem;
-    font-weight: 700 ;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 500 ;
     margin: 10px 20% 0 20% !important;
-    color: #0000008c;
+    color: #000000;
 }
 
 .buttons{
@@ -50,41 +51,16 @@
     grid-gap: 10vw;
     // grid-gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 5vh;
     margin-top: 5vh;
 }
 .container{
     display: grid;
     place-items: center;
-    height: 70vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
 
-
-// @media (max-width: 767px){
-//     .title{
-//         grid-template-columns: repeat(4, 1fr);
-//     }
-// }
-
-// @media (max-width: 565px){
-//     .title{
-//         grid-template-columns: repeat(3, 1fr);
-//     }
-// }
-
-@media (max-width: 425px){
-    .title{
-        font-size: 2.8rem;
-    }
-    .subTitle{
-        font-size: 1.0rem;
-    }
-}
-
-@media (max-width: 375px){
-    .title{
-        font-size: 2.8rem;
-    }
-    .subTitle{
-        font-size: 1.0rem;
-    }
+.btn{
+    background-color: #0081a7 !important;
 }
