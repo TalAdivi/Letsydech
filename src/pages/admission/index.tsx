@@ -3,14 +3,22 @@ import Axios from 'axios';
 import { Typography } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
 import Footer from '../../shared/components/footer';
-import { AboutUs as AboutUsModel } from '../../shared/models/aboutus.model';
 import Loading from '../../shared/components/loading';
-import styles from './aboutUs.module.scss';
+import styles from './admission.module.scss';
 import ImageGallery from 'react-image-gallery';
+import { Image } from '../../shared/models/gallery.model';
 
-const AboutUs = ({ history, width }: any): any => {
+interface IAdmission {
+  Title: string,
+  Text1: string,
+  Text2: string,
+  Text3: string,
+  Images: Array<Image>
+}
+
+const Admission = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
-  const [data, setData] = React.useState<AboutUsModel>();
+  const [data, setData] = React.useState<IAdmission>();
   React.useEffect((): any => {
     fetchData();
   }, []);
@@ -18,8 +26,8 @@ const AboutUs = ({ history, width }: any): any => {
 
   const fetchData = async (): Promise<void> => {
     try {
-      console.log(`${process.env.REACT_APP_BACKEND_URL}/about-us`);
-      const res: { data: AboutUsModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/about-us`);
+      console.log(`${process.env.REACT_APP_BACKEND_URL}/admission`);
+      const res: { data: IAdmission } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/admission`);
       setData(res.data);
       console.log(res.data);
     } catch (e) {
@@ -58,9 +66,9 @@ const AboutUs = ({ history, width }: any): any => {
                 <ImageGallery showNav={false} autoPlay={true} slideInterval={5000} showFullscreenButton={false} showThumbnails={false} showIndex={false} isRTL={true}  items={genImages()} />
               </div>
               <div className={styles.licensesContainer}>
-                <h3>אישורים</h3>
+                <h3>אישורים:</h3>
                 <div className={styles.licenses}>
-                  {data?.Licenses.map((license) =>
+                  {data?.Images.map((license) =>
                     <div key={license.id} className={styles.imageHolder}>
                       <a href={license.url} target='_black'><img src={license.url} /></a>
                     </div>
@@ -76,5 +84,5 @@ const AboutUs = ({ history, width }: any): any => {
   );
 };
 
-export default AboutUs;
+export default Admission;
 

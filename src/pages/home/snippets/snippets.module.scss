@@ -5,6 +5,7 @@
     grid-gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
+    min-height: 20vh !important;
 }
 
 
@@ -18,16 +19,43 @@
     margin: 5px;
     width: 15vw;
     border-radius: 10px;
+    min-height: 30vh;
     p{
         text-align: center;
+        margin-bottom: 8px
     }
     
     h3 {
-        margin: 0
+        margin-bottom: 8px
     }
 
     .icon {
-        height: 10vh;
+        height: 20vh;
         width: 10vw;
+    }
+}
+
+
+@media (max-width: 767px){
+    .container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 565px){
+    .container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 425px){
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 375px){
+    .container{
+        grid-template-columns: repeat(1, 1fr);
     }
 }

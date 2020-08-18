@@ -29,11 +29,11 @@ const Banner = ({ primaryText, secondaryText, history }: any) => {
           {secondaryText}
         </p>
         <div className={styles.buttons}>
-          <Button className={styles.btn} size='medium' color='primary' variant="contained" onClick={() => history.push('/contactus')}>
+          <Button className={styles.btn} size='large' color='primary' variant="contained" onClick={() => history.push('/contactus')}>
             רוצים לדבר?
           </Button>
-          <Button className={styles.btn} size='medium' color='primary' variant="contained" onClick={() => history.push('/donate')}>
-            בוא לתמוך
+          <Button className={styles.btn} size='large' color='primary' variant="contained" onClick={() => history.push('/donate')}>
+            בואו לתמוך בנו
           </Button>
         </div>
       </Grid>

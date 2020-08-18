@@ -1,9 +1,16 @@
 import React from 'react';
 import styles from './snippets.module.scss';
 import Axios from 'axios';
+import { Image } from '../../../shared/models/gallery.model';
+
+interface ISnippets{
+    Title: string;
+    Text: string;
+    Image: Image;
+}
 
 const Snippets = (): any => {
-    const [data, setData] = React.useState<Array<{Title: string, Text: string, Image: string}>>();
+    const [data, setData] = React.useState<Array<ISnippets>>();
 
     React.useEffect((): any => {
         fetchData();
@@ -11,7 +18,7 @@ const Snippets = (): any => {
 
     const fetchData = async (): Promise<void> => {
         try {
-            const res: { data: Array<{Title: string, Text: string, Image: string}> } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/snippets`);
+            const res: { data: Array<ISnippets> } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/snippets`);
             setData(res.data);
             console.log(res.data);
         } catch (e) {
@@ -28,7 +35,7 @@ const Snippets = (): any => {
                             <h3>{snippet.Title}</h3>
                             <p >{snippet.Text}</p>
                             {!snippet.Image ? null :
-                                <div className={styles.icon}><img src={snippet.Image} /></div>
+                                <div className={styles.icon}><img src={snippet.Image.url} /></div>
                             }
                         </div>
                     )}

@@ -49,7 +49,7 @@ const Home = ({ history }: any): any => {
               </Grid>
             </Grid>
             <Grid id="support" className={styles.donate} container spacing={2} justify='center'>
-              <Donate primaryText={data?.DonationTitle!} secondaryText={data?.DonationText!} />
+              <Donate history={history} primaryText={data?.DonationTitle!} secondaryText={data?.DonationText!} />
             </Grid>
           </div>
 

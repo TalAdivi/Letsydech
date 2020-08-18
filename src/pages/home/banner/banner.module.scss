@@ -33,13 +33,13 @@
 }
 
 .title{
-    font-size: 1.8rem;
+    font-size: 3.8rem;
     font-weight: bolder;
     color: #000000bf;
     margin: 0 auto 0 auto;
 }
 .subTitle{
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 700 ;
     margin: 10px 20% 0 20% !important;
     color: #0000008c;
@@ -47,11 +47,44 @@
 
 .buttons{
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 10vw;
+    // grid-gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 5vh;
 }
 .container{
     display: grid;
     place-items: center;
     height: 70vh;
+}
+
+
+// @media (max-width: 767px){
+//     .title{
+//         grid-template-columns: repeat(4, 1fr);
+//     }
+// }
+
+// @media (max-width: 565px){
+//     .title{
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }
+
+@media (max-width: 425px){
+    .title{
+        font-size: 2.8rem;
+    }
+    .subTitle{
+        font-size: 1.0rem;
+    }
+}
+
+@media (max-width: 375px){
+    .title{
+        font-size: 2.8rem;
+    }
+    .subTitle{
+        font-size: 1.0rem;
+    }
 }
