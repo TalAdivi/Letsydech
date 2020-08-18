@@ -50,6 +50,12 @@ const GallaryComponent = ({ history }: any): any => {
 
   const genImages = (): Array<any> => {
     const getThumbnail = (image: any): any => {
+      if(!image.formats.small || !image.formats.medium || !image.formats.large )
+        if(!image.formats.thumbnail)
+          return image.url;
+        else
+          return image.formats.thumbnail.url;
+
       const size = getViewSize();
       switch (size) {
         case 1:

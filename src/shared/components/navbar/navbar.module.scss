@@ -1,4 +1,24 @@
+.root{
+    header,
+    div{
+        opacity: 1 !important;
+    }
+}
+
 .container{
-    background-color: #253142;
-    color: #b2b3b6;
+    background-color: #0081a7;
+    color: #fdfcdc !important;
+
+    display: grid;
+    grid-template-columns: minmax(150px, 10%) 1fr;
+    place-items: center;
+
+    .logo{
+
+    }
+
+    button{
+        color: #fdfcdc;
+        opacity: 100;
+    }
 }
