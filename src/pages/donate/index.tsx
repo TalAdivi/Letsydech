@@ -13,7 +13,7 @@ import ReactMarkdown from "react-markdown";
 const Donate = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<Donation>();
-  const [currAmount, setCurrAmount] = React.useState(0);
+  const [currAmount, setCurrAmount] = React.useState(10);
 
   React.useEffect((): any => {
     fetchImages();
@@ -73,6 +73,15 @@ const Donate = ({ history, width }: any): any => {
           </div>
           <div className={styles.dunationSum}>
             <p className={styles.amountToDonate}>{`סכום לתרומה  ${currAmount}₪`}</p>
+            {/* <PayPalButton
+              amount={currAmount}
+              onSuccess={(details: any, data: any) => onSuccess(details, data)}
+              options={{
+                clientId: process.env.REACT_APP_PAYPAL_CLINET_ID,
+                currency: "ILS"
+              }}
+            /> */}
+        
           </div>
           <div className={styles.center}>
             <PayPalButton
