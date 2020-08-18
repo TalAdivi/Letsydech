@@ -35,7 +35,7 @@ const AboutUs = ({ history, width }: any): any => {
       arr.push(
         {
           original: image.url,
-          thumbnail: image.formats.thumbnail
+          thumbnail: image.formats.thumbnail.url
         });
     });
     return arr;
@@ -55,7 +55,7 @@ const AboutUs = ({ history, width }: any): any => {
                 <Typography align="center" className={styles.text3Margin}>{data?.Text3}</Typography>
               </div>
               <div className={styles.gallery}>
-                <ImageGallery autoPlay={true} showFullscreenButton={false} showThumbnails={false} showIndex={false} isRTL={true} items={genImages()} />
+                <ImageGallery autoPlay={true} slideInterval={5000} showFullscreenButton={false} showThumbnails={false} showIndex={false} isRTL={true} items={genImages()} />
               </div>
               <div className={styles.licensesContainer}>
                 <h3>אישורים:</h3>
