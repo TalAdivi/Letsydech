@@ -63,36 +63,4 @@
 
 .btn{
     background-color: #0081a7 !important;
-    height: 70vh;
-}
-
-
-// @media (max-width: 767px){
-//     .title{
-//         grid-template-columns: repeat(4, 1fr);
-//     }
-// }
-
-// @media (max-width: 565px){
-//     .title{
-//         grid-template-columns: repeat(3, 1fr);
-//     }
-// }
-
-@media (max-width: 425px){
-    .title{
-        font-size: 2.8rem;
-    }
-    .subTitle{
-        font-size: 1.0rem;
-    }
-}
-
-@media (max-width: 375px){
-    .title{
-        font-size: 2.8rem;
-    }
-    .subTitle{
-        font-size: 1.0rem;
-    }
 }
