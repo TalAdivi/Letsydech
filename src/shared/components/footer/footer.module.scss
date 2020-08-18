@@ -4,7 +4,7 @@ a{
 }
 
 a:active,a:hover{
-    color: #8a97be;
+    color: #fed9b7;
 }
 
 .container{
@@ -44,6 +44,10 @@ a:active,a:hover{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
+
+    a{
+        margin: 0px 2vw;
+    }
 }
 
 .pagesNav{

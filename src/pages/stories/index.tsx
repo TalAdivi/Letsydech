@@ -13,7 +13,7 @@ const Stories = ({ history }: any): any => {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect((): any => {
-    fetchImages();
+    fetchData();
   }, []);
 
   const dup = (arr: Array<any>): void => {
@@ -26,7 +26,7 @@ const Stories = ({ history }: any): any => {
     });
   };
 
-  const fetchImages = async (): Promise<void> => {
+  const fetchData = async (): Promise<void> => {
     try {
       setLoading(true);
       const res: { data: StoriesModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/stories`);
@@ -51,11 +51,11 @@ const Stories = ({ history }: any): any => {
             </div>
           </div>
           <div className={styles.storiesContainer}>
-            {blogs?.map((blog: any) => <Story data={blog} />)}
+            {blogs?.map((blog: any) => <Story key={blog.id} data={blog} />)}
           </div>
         </>
       }
-      <Footer history={history}/>
+      <Footer history={history} />
     </div>
   )
 }

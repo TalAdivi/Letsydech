@@ -7,7 +7,7 @@
 
 body {
    margin: 0;
-  background-color: #f7f5f0;
+  background-color: #fdfcdc;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -101,4 +101,13 @@ div{
 
 .MuiGrid-root.MuiGrid-container.MuiGrid-direction-xs-column.MuiGrid-align-items-xs-flex-start{
   opacity: 1 !important;
+}
+
+.MuiDrawer-paper{
+  background-color: #0081a7 !important;
+}
+
+input:focus,textarea:focus {
+  border: none;    
+  outline: none;
 }
