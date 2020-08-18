@@ -55,7 +55,7 @@ const AboutUs = ({ history, width }: any): any => {
                 <Typography align="center" className={styles.text3Margin}>{data?.Text3}</Typography>
               </div>
               <div className={styles.gallery}>
-                <ImageGallery showFullscreenButton={false} showThumbnails={false} showIndex={false} isRTL={true} items={genImages()} />
+                <ImageGallery showNav={false} autoPlay={true} slideInterval={5000} showFullscreenButton={false} showThumbnails={false} showIndex={false} isRTL={true}  items={genImages()} />
               </div>
               <div className={styles.licensesContainer}>
                 <h3>אישורים:</h3>
