@@ -1,6 +1,6 @@
 .bg{
-  background-color: lightblue;
-  min-height: 60vh;
+  // background-color: lightblue;
+  // min-height: 80vh;
 }
 
 .myForm {
@@ -11,7 +11,7 @@
 .container{
   display: grid;
   place-items: center;
-  padding-top: 5vh;
+  padding-top: 2vh;
   padding-bottom: 1vh;
 }
 
@@ -86,35 +86,41 @@ input[type="submit"] {
   -webkit-appearance: none;
 }
 
-@media (max-width: 767px){
-  .supporters{
-      grid-template-columns: repeat(4, 1fr);
-  }
-}
+// @media (max-width: 767px){
+//   .supporters{
+//       grid-template-columns: repeat(4, 1fr);
+//   }
+// }
 
-@media (max-width: 565px){
-  .supporters{
-      grid-template-columns: repeat(3, 1fr);
-  }
-}
+// @media (max-width: 565px){
+//   .supporters{
+//       grid-template-columns: repeat(3, 1fr);
+//   }
+// }
 
-@media (max-width: 425px){
-  .supporters{
-      grid-template-columns: repeat(2, 1fr);
-  }
-}
+// @media (max-width: 425px){
+//   .supporters{
+//       grid-template-columns: repeat(2, 1fr);
+//   }
+// }
 
-@media (max-width: 375px){
-  .supporters{
-      grid-template-columns: repeat(1, 1fr);
-  }
-}
+// @media (max-width: 375px){
+//   .supporters{
+//       grid-template-columns: repeat(1, 1fr);
+//   }
+// }
 
 .main {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 50vh;
+  // margin: 0 auto;
+  margin-bottom: 2vh;
+  background-color: #DEDCD8;
 }
 
 .content{
   min-height: 150px;
+}
+
+.marginForm {
+  margin-bottom: 2vh;
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
-import { Grid, GridList, GridListTile, Typography } from '@material-ui/core';
+import { Grid, GridList, GridListTile, Typography, Box } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import styles from './contactUs.module.scss';
 import Axios from 'axios';
 import Loading from '../../shared/components/loading';
+import Footer from '../../shared/components/footer';
 
 
 interface IFormInputs {
@@ -76,15 +77,15 @@ const ContactUs = ({ history, width }: any): any => {
       {loading ? <Loading loading={loading} /> :
       <div>
         <div>
-          <div className={styles.bg}>
+          <div className={styles.marginForm}>
             <div className={styles.container}> 
 
             <p className={styles.title}>אנחנו לצידך</p>
             <p  className={styles.subTitle} >השאירו פרטים וניצור קשר בהקדם</p>
             </div>
 
-
-            <div className={styles.main}>
+            {/* <Box> */}
+            <Box borderRadius={16}  m={'auto'} border={1} className={styles.main}>
               <form className={styles.myForm} onSubmit={handleSubmit(onSubmit)}>
                 <div>
                   <label htmlFor="name">שם</label>
@@ -113,14 +114,14 @@ const ContactUs = ({ history, width }: any): any => {
                 </div>
                 <input className= {styles.input} type="submit" value='שילחי' />
               </form>
-            </div>
+            </Box>
 
           </div>
 
         </div>
       </div>
 }
-      {/* } */}
+      <Footer history={history}/>
     </div>
   );
 };
