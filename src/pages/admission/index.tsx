@@ -1,11 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
-import { Typography } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
 import Footer from '../../shared/components/footer';
 import Loading from '../../shared/components/loading';
 import styles from './admission.module.scss';
 import { Admission as AdmissionModel, Card } from '../../shared/models/admission.model';
+import ReactMarkdown from "react-markdown";
 
 const Admission = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
@@ -32,21 +33,22 @@ const Admission = ({ history, width }: any): any => {
     <div>
       <Navbar history={history} path={"admission"} />
       {loading ? <Loading loading={loading} /> :
-        <div>
-          <div className={styles.container}>
-            <div className={styles.bg}>
-              <h1>{data?.Title}</h1>
-              <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >{data?.Text}</Typography>
-              <Typography align="center" className={styles.text2Margin}>{data?.Text}</Typography>
-              <Typography align="center" className={styles.text3Margin}>{data?.Text}</Typography>
-            </div>
-            <div className={styles.gallery}>
-            </div>
-            <div className={styles.licensesContainer}>
-              <h3>אישורים:</h3>
-              <div className={styles.licenses}>
+        <div className={styles.container}>
+          <div className={styles.textContainer}>
+            <p className={styles.title}>{data?.Title}</p>
+            <p className={styles.subTitle}>{data?.Text}</p>
+            <Button className={styles.btn} size='large' color='primary' variant="contained" onClick={() => history.push('/contactus')}>
+              אנחוא תמיד פה לעזור לך בכל עת
+            </Button>
+
+          </div>
+          <div className={styles.cardsContainer}>
+            {data?.Cards.map((card: any) =>
+              <div className={styles.card}>
+                <h3>{card.Title}</h3>
+                <ReactMarkdown source={card.Text} />
               </div>
-            </div>
+            )}
           </div>
         </div>
       }

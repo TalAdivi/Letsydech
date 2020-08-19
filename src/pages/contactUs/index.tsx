@@ -54,6 +54,7 @@ const ContactUs = ({ history, width }: any): any => {
     const obj = document.getElementById('errorTxt');
     if (obj)
       obj.innerHTML = '';
+      
     postRequestParams.from.name = data.name;
     postRequestParams.from.email = data.email;
     postRequestParams.from.phone = data.phoneNumber;
@@ -66,7 +67,6 @@ const ContactUs = ({ history, width }: any): any => {
       return;
     }
 
-    console.log('postRequestParams => ', postRequestParams);
     document.getElementById('submitBtn')?.setAttribute('disabled', 'true');
     try {
       await Axios.post(`${process.env.REACT_APP_BACKEND_URL}/sendmail`, postRequestParams);

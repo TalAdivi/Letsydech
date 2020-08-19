@@ -47,11 +47,11 @@ const useStyles = makeStyles((theme: Theme) =>
 const Header = ({ history, path }: any): any => {
   const [data, setData] = React.useState<{ Logo: Image }>();
   const [navOpen, setNavOpen] = React.useState(false);
-  const [setNav, setSetNav] = React.useState(window.innerWidth <= 1113);
+  const [setNav, setSetNav] = React.useState(window.innerWidth <= 1429);
 
   React.useEffect((): any => {
     window.addEventListener('resize', () => {
-      setSetNav(window.innerWidth <= 1113);
+      setSetNav(window.innerWidth <= 1429);
     });
     fetchData();
   }, []);
@@ -104,8 +104,6 @@ const Header = ({ history, path }: any): any => {
 
   const container: any = window !== undefined ? document.body : undefined;
 
-
-
   return (
     <div className={styles.root}>
       <AppBar position="static" color="transparent">
@@ -114,8 +112,8 @@ const Header = ({ history, path }: any): any => {
             <img src={data?.Logo.url} alt="logo" onClick={() => history.push('/')} />
           </div>
           <div className={styles.nav}>
-            {!setNav ?
-              <Grid className={styles.grid} container alignItems="flex-start" justify="flex-start" direction="column">
+            {!setNav ?//container alignItems="flex-start" justify="flex-start" direction="column"
+              <div className={styles.gridHolder}>
                 <Router>
                   <div>
                     <Tab label='עמוד הבית' onClick={() => history.push('/')} />
@@ -128,7 +126,7 @@ const Header = ({ history, path }: any): any => {
                     <Tab label='אנגלית' onClick={() => history.push(`/en/${path}`)} />
                   </div>
                 </Router>
-              </Grid>
+              </div>
               :
               <IconButton
                 color="inherit"

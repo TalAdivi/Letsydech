@@ -43,6 +43,19 @@
     color: #fed9b7;
 }
 
+@media (max-width: 1429px){
+    .container{
+        grid-template-columns: minmax(150px, 10%) 170vw;
+
+    }
+}
+
+@media (max-width: 1243px){
+    .container{
+        grid-template-columns: minmax(150px, 10%) 160vw;
+
+    }
+}
 
 @media (max-width: 1113px){
     .container{
