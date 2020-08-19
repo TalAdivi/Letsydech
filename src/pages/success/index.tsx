@@ -20,5 +20,5 @@ const Sucess = ({ history, location }: any) => {
         </div>
     )
 }
-
+    ;   
 export default Sucess;

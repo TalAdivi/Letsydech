@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import { Grid, GridList, GridListTile, Typography, Box, Divider, Button } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
-import styles from './contactUs.module.scss';
+import styles from './contactUs-en.module.scss';
 import Axios from 'axios';
 import Loading from '../../shared/components/loading';
-import Footer from '../../shared/components/footer';
+import FooterEn from '../../shared/components/footer/index.en';
 import { Info as InfoModel, Form as FormModel } from '../../shared/models/contactus.model';
 import { useLocation } from 'react-router-dom';
+import HeaderEu from '../../shared/components/navbar/navbar.en';
 
 const postRequestParams = {
   "sender": "letsydechWebsite@gmail.com",
@@ -23,7 +24,7 @@ const postRequestParams = {
   }
 }
 
-const ContactUs = ({ history, width }: any): any => {
+const ContactUsEn = ({ history, width }: any): any => {
   const { register, handleSubmit } = useForm<FormModel>();
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<InfoModel>();
@@ -76,35 +77,35 @@ const ContactUs = ({ history, width }: any): any => {
     document.getElementById('submitBtn')?.setAttribute('disabled', 'true');
     try {
       await Axios.post(`${process.env.REACT_APP_BACKEND_URL}/sendmail`, postRequestParams);
-      history.push('/success', { response: 'ההודעה נשלחה בהצלחה!' });
+      history.push('/success', { response: 'Mail send successfully!' });
     } catch (e) {
       document.getElementById('submitBtn')?.setAttribute('disabled', 'false');
       if (obj)
         obj.innerHTML = 'Error Occured. Please Try Again.';
     }
   };
-
+// HeaderEu
   return (
     <div>
-      <Navbar history={history} path={"contactus"} />
+      <HeaderEu history={history} path={"contactus"} />
       {loading ? <Loading loading={loading} /> :
         <div className={styles.root}>
           <div className={styles.container}>
-            <p className={styles.title}>אנחנו לצידך</p>
-            <Button className={styles.btn} variant="contained" onClick={() => window.open('tel:0097236125115', '_blank')} >התקשרו עכשיו</Button>
-            <p className={styles.subTitle} > או </p>
-            <p className={styles.subTitle} >השאירו פרטים וניצור קשר בהקדם </p>
+            <p className={styles.title}>We are here for you</p>
+            <Button className={styles.btn} variant="contained" onClick={() => window.open('tel:0097236125115', '_blank')} >Call now</Button>
+            <p className={styles.subTitle} > Or </p>
+            <p className={styles.subTitle} >Fill the form and we will contact you </p>
           </div>
           <div className={styles.marginForm}>
             <Box borderRadius={16} m={'auto'} border={1} className={styles.main}>
               <form className={styles.myForm} onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                  <label htmlFor="name">שם</label>
-                  <input className={styles.input} name="name" placeholder="שם" ref={register} />
+                  <label htmlFor="name">name</label>
+                  <input className={styles.input} name="name" placeholder="name" ref={register} />
                 </div>
 
                 <div>
-                  <label htmlFor="email">אימייל</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     className={styles.input}
                     name="email"
@@ -114,25 +115,26 @@ const ContactUs = ({ history, width }: any): any => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phoneNumber">מספר טלפון</label>
+                  <label htmlFor="phoneNumber">phone number</label>
                   <input className={styles.input} name="phoneNumber" pattern="05[0-9][0-9]{7}" placeholder="0501234567" ref={register} />
                 </div>
                 <div>
-                  <label htmlFor="freeText">תוכן הפניה</label>
-                  <textarea className={[styles.content, styles.input].join(' ')} name="freeText" placeholder="טקסט חופשי.." ref={register} />
+                  <label htmlFor="freeText">content</label>
+                  <textarea className={[styles.content, styles.input].join(' ')} name="freeText" placeholder="Free text.." ref={register} />
                 </div>
-                <input id="submitBtn" className={styles.input} type="submit" value='שילחי' />
+                <input id="submitBtn" className={styles.input} type="submit" value='send' />
                 <p id="errorTxt" className={styles.error}></p>
               </form>
             </Box>
           </div>
         </div>
       }
-      <Footer history={history} />
+      
+      <FooterEn history={history} />
     </div>
   );
 };
 
-export default ContactUs;
+export default ContactUsEn;
 
 

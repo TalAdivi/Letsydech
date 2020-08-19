@@ -5,7 +5,7 @@ import { MdEmail } from 'react-icons/md';
 import { FaFacebookSquare, FaPhoneSquareAlt } from 'react-icons/fa';
 import { TiSocialInstagram } from 'react-icons/ti';
 
-const Footer = ({ history }: any): any => {
+const FooterEn = ({ history }: any): any => {
     const [data, setData] = React.useState<{ Title: string, Text: string, Phone: string, Email: string, Facebook: string, Instagram: string }>();
 
     React.useEffect((): any => {
@@ -28,25 +28,25 @@ const Footer = ({ history }: any): any => {
                     <p className={styles.subTitle}>{data?.Text}</p>
                 </div>
                 <div className={styles.pagesNav}>
-                    <div className={styles.pageCard} onClick={() => history.push('/aboutus')}>
-                        <p className={styles.innerTitle}>אודותינו</p>
-                        <p className={styles.innerSub}>קיראו עלינו עוד עלינו</p>
+                    <div className={styles.pageCard} onClick={() => history.push('/en/aboutus')}>
+                        <p className={styles.innerTitle}>About us</p>
+                        <p className={styles.innerSub}>Read more about us</p>
                     </div>
-                    <div className={styles.pageCard} onClick={() => history.push('/gallery')}>
-                        <p className={styles.innerTitle}>גלריית תמונות</p>
-                        <p className={styles.innerSub}>צפו בגלריית התמונות שלנו</p>
+                    <div className={styles.pageCard} onClick={() => history.push('/en/gallery')}>
+                        <p className={styles.innerTitle}>Gallery</p>
+                        <p className={styles.innerSub}>Look at our image gallery</p>
                     </div>
-                    <div className={styles.pageCard} onClick={() => history.push('/donate')}>
-                        <p className={styles.innerTitle}>תרומה</p>
-                        <p className={styles.innerSub}>בואו לתמוך בנו</p>
+                    <div className={styles.pageCard} onClick={() => history.push('/en/donate')}>
+                        <p className={styles.innerTitle}>Donate</p>
+                        <p className={styles.innerSub}>Support us</p>
                     </div>
-                    <div className={styles.pageCard} onClick={() => history.push('/contactus')}>
-                        <p className={styles.innerTitle}>צרו קשר</p>
-                        <p className={styles.innerSub}>תיצרו איתנו קשר</p>
+                    <div className={styles.pageCard} onClick={() => history.push('/en/contactus')}>
+                        <p className={styles.innerTitle}>Contact us</p>
+                        <p className={styles.innerSub}>Where are here for you</p>
                     </div>
-                    <div className={styles.pageCard} onClick={() => history.push('/stories')}>
-                        <p className={styles.innerTitle}>סיפורים</p>
-                        <p className={styles.innerSub}>חוויות אישיות </p>
+                    <div className={styles.pageCard} onClick={() => history.push('/en/stories')}>
+                        <p className={styles.innerTitle}>Stories</p>
+                        <p className={styles.innerSub}>Personal experience</p>
                     </div>
                 </div>
             </div>
@@ -62,4 +62,4 @@ const Footer = ({ history }: any): any => {
     )
 }
 
-export default Footer;
+export default FooterEn;

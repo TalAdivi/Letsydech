@@ -38,7 +38,7 @@ const Admission = ({ history, width }: any): any => {
             <p className={styles.title}>{data?.Title}</p>
             <p className={styles.subTitle}>{data?.Text}</p>
             <Button className={styles.btn} size='large' color='primary' variant="contained" onClick={() => history.push('/contactus')}>
-              אנחוא תמיד פה לעזור לך בכל עת
+              אנחנו פה לעזור לך
             </Button>
 
           </div>
