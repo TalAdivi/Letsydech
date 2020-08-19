@@ -8,6 +8,7 @@ import Donate from './pages/donate';
 import ContactUs from './pages/contactUs'
 import Stories from './pages/stories'
 import Admission from './pages/admission';
+import Success from './pages/success';
 
 const App = (): any => {
   return (
@@ -25,6 +26,7 @@ const App = (): any => {
         <Route exact path="/Donate" component={Donate} />
         <Route exact path="/stories" component={Stories} />
         <Route exact path="/admission" component={Admission} />
+        <Route exact path="/success" component={Success} />
         <Route exact path="/en" component={Home} />
         <Route exact path="/en/Gallery" component={Gallery} />
         <Route exact path="/en/aboutUs" component={AboutUs} />
