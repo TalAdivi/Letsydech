@@ -44,7 +44,7 @@ const Donate = ({ history, width }: any): any => {
 
   return (
     <div>
-      <Navbar history={history} />
+      <Navbar history={history} path={"donate"} />
       {loading ? <Loading loading={loading} /> :
         <div className={styles.container}>
           <div >

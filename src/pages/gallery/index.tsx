@@ -16,10 +16,10 @@ const GallaryComponent = ({ history }: any): any => {
     window.addEventListener('resize', () => {
       setSetNav(window.innerWidth);
     });
-    fetchImages();
+    fetchData();
   }, []);
 
-  const fetchImages = async (): Promise<void> => {
+  const fetchData = async (): Promise<void> => {
     try {
       setLoading(true);
       const res: { data: GalleryModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/gallery`);
@@ -79,7 +79,7 @@ const GallaryComponent = ({ history }: any): any => {
 
   return (
     <div>
-      <Navbar history={history} />
+      <Navbar history={history} path={"gallery"} />
       {loading ? <Loading loading={loading} /> :
         <>
           <div className={styles.container}>

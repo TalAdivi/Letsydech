@@ -43,20 +43,22 @@ const AboutUs = ({ history, width }: any): any => {
 
   return (
     <div>
-      <Navbar history={history} />
+      <Navbar history={history} path={"aboutus"} />
       {loading ? <Loading loading={loading} /> :
         <div>
-          {data?.Images.length === 0 ? <h2>No Content</h2> :
-            <div className={styles.container}>
-              <div className={styles.bg}>
-                <h1>{data?.Title}</h1>
-                <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >{data?.Text1}</Typography>
-                <Typography align="center" className={styles.text2Margin}>{data?.Text2}</Typography>
-                <Typography align="center" className={styles.text3Margin}>{data?.Text3}</Typography>
-              </div>
+          <div className={styles.container}>
+            <div className={styles.bg}>
+              <h1>{data?.Title}</h1>
+              <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >{data?.Text1}</Typography>
+              <Typography align="center" className={styles.text2Margin}>{data?.Text2}</Typography>
+              <Typography align="center" className={styles.text3Margin}>{data?.Text3}</Typography>
+            </div>
+            {data?.Images.length === 0 ? null :
               <div className={styles.gallery}>
-                <ImageGallery autoPlay={true} slideInterval={5000} showFullscreenButton={false} showThumbnails={false} showIndex={false} isRTL={true}  items={genImages()} />
+                <ImageGallery autoPlay={true} slideInterval={5000} showFullscreenButton={false} showThumbnails={false} showIndex={false} isRTL={true} items={genImages()} />
               </div>
+            }
+            {data?.Licenses.length === 0 ? null :
               <div className={styles.licensesContainer}>
                 <h3>אישורים</h3>
                 <div className={styles.licenses}>
@@ -67,8 +69,8 @@ const AboutUs = ({ history, width }: any): any => {
                   )}
                 </div>
               </div>
-            </div>
-          }
+            }
+          </div>
         </div>
       }
       <Footer history={history} />

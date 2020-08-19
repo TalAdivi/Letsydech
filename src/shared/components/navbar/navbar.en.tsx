@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Grid, Tab, AppBar, List, ListItem, ListItemText, Drawer, IconButton, Divider } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import styles from './navbar.module.scss';
+import styles from './navbar.en.module.scss';
 import Axios from 'axios';
 import { Image } from '../../models/gallery.model';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
@@ -96,8 +96,8 @@ const Header = ({ history, path }: any): any => {
         <ListItemText className={styles.listItem} primary={'צרו קשר'} />
       </ListItem>
       <Divider />
-      <ListItem button key={'אנגלית'} onClick={() => history.push(`/en/${path}`)}>
-        <ListItemText className={styles.listItem} primary={'אנגלית'} />
+      <ListItem button key={'Hebrew'} onClick={() => history.push(`/${path}`)}>
+        <ListItemText className={styles.listItem} primary={'Hebrew'} />
       </ListItem>
     </List>
   );
@@ -125,7 +125,7 @@ const Header = ({ history, path }: any): any => {
                     <Tab label='גלריית תמונות' onClick={() => history.push('/gallery')} />
                     <Tab label='תרומות' onClick={() => history.push('/donate')} />
                     <Tab label='צרו קשר' onClick={() => history.push('/contactUs')} />
-                    <Tab label='אנגלית' onClick={() => history.push(`/en/${path}`)} />
+                    <Tab label='Hebrew' onClick={() => history.push(`/${path}`)} />
                   </div>
                 </Router>
               </Grid>

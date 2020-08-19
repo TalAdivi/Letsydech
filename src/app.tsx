@@ -25,6 +25,13 @@ const App = (): any => {
         <Route exact path="/Donate" component={Donate} />
         <Route exact path="/stories" component={Stories} />
         <Route exact path="/admission" component={Admission} />
+        <Route exact path="/en" component={Home} />
+        <Route exact path="/en/Gallery" component={Gallery} />
+        <Route exact path="/en/aboutUs" component={AboutUs} />
+        <Route exact path="/en/contactUs" component={ContactUs} />
+        <Route exact path="/en/Donate" component={Donate} />
+        <Route exact path="/en/stories" component={Stories} />
+        <Route exact path="/en/admission" component={Admission} />
       </Router>
     </div>
   );

@@ -57,6 +57,18 @@ const ContactUs = ({ history, width }: any): any => {
     }
   };
 
+  const validate = (): boolean => {
+    //These just to trick the function not to error. remove once implemented
+    let phone;
+    let name;
+    let text;
+    let email;
+    //
+
+    if (name && email && phone && text) return true;
+    return false;
+  };
+
   const onSubmit = (data: IFormInputs) => {
     postRequestParams.from.name = data.name;
     postRequestParams.from.email = data.email;
@@ -64,7 +76,13 @@ const ContactUs = ({ history, width }: any): any => {
     postRequestParams.message.text = data.freeText;
     postRequestParams.message.subject += `${data.name}`
 
+    if (!validate()) { 
+      //show the error message then 
+      return;
+    }
+        
     console.log('postRequestParams => ', postRequestParams);
+    document.getElementById('submitBtn')?.setAttribute('disabled', 'true');
 
     Axios.post(`${process.env.REACT_APP_BACKEND_URL}/sendmail`, postRequestParams)
       .then(response => { console.log('done') })
@@ -73,7 +91,7 @@ const ContactUs = ({ history, width }: any): any => {
 
   return (
     <div>
-      <Navbar history={history} />
+      <Navbar history={history} path={"contactus"} />
       {loading ? <Loading loading={loading} /> :
         <div>
           <div>
@@ -103,13 +121,13 @@ const ContactUs = ({ history, width }: any): any => {
                   </div>
                   <div>
                     <label htmlFor="phoneNumber">מספר טלפון</label>
-                    <input className={styles.input} name="phoneNumber" placeholder="052-0000000" ref={register} />
+                    <input className={styles.input} name="phoneNumber" pattern="05[0-9][0-9]{7}" placeholder="050-1234567" ref={register} />
                   </div>
                   <div>
                     <label htmlFor="freeText">תוכן הפניה</label>
                     <textarea className={[styles.content, styles.input].join(' ')} name="freeText" placeholder="טקסט חופשי.." ref={register} />
                   </div>
-                  <input className={styles.input} type="submit" value='שילחי' />
+                  <input id="submitBtn" className={styles.input} type="submit" value='שילחי' />
                 </form>
               </Box>
 

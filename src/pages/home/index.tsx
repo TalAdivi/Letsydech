@@ -29,12 +29,13 @@ const Home = ({ history }: any): any => {
       setLoading(false);
     }
   };
+  
   return (
     <div>
       {loading ? <Loading loading={loading} /> :
         <div>
           <div>
-            <Navbar history={history} />
+            <Navbar history={history} path={""}/>
             <Grid className={styles.container} container spacing={2} justify='center'>
               <div className={styles.bg} style={{ backgroundImage: `url(${data?.TitleImage.url})` }} > </div>
               <Banner primaryText={data?.Title!} secondaryText={data?.TitleText!} history={history} />

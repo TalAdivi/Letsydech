@@ -16,21 +16,12 @@ const Stories = ({ history }: any): any => {
     fetchData();
   }, []);
 
-  const dup = (arr: Array<any>): void => {
-    arr.forEach(element => {
-      arr.push(element);
-      arr.push(element);
-      arr.push(element);
-      arr.push(element);
-      arr.push(element);
-    });
-  };
-
   const fetchData = async (): Promise<void> => {
     try {
       setLoading(true);
       const res: { data: StoriesModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/stories`);
       const res2: { data: StoryModel[] } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/blogs`);
+      res2.data.sort((a, b) => {return Date.parse(b.createdAt) - Date.parse(a.createdAt)});
       setData(res.data);
       setBlogs(res2.data);
     } catch (e) {
@@ -41,7 +32,7 @@ const Stories = ({ history }: any): any => {
   };
   return (
     <div>
-      <Navbar history={history} />
+      <Navbar history={history} path={"stories"}/>
       {loading ? <Loading loading={loading} /> :
         <>
           <div className={styles.container}>

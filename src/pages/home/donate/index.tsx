@@ -12,7 +12,7 @@ const Donate = ({ primaryText, secondaryText, history }: any) => {
                 {secondaryText !== '' ?
                     <p className={styles.secondaryItem}>{secondaryText}</p>
                     : null}
-                <Button className={styles.btn} size='large' color='primary' variant="contained">
+                <Button className={styles.btn} size='large' color='primary' variant="contained" onClick={()=>history.push('/Donate')}>
                     תרומה
             </Button>
             </div>

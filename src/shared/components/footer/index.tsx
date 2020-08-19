@@ -32,6 +32,14 @@ const Footer = ({ history }: any): any => {
                         <p className={styles.innerTitle}>אודותינו</p>
                         <p className={styles.innerSub}>קיראו עלינו עוד עלינו</p>
                     </div>
+                    <div className={styles.pageCard} onClick={() => history.push('/admission')}>
+                        <p className={styles.innerTitle}>אישפוזית לנשים</p>
+                        <p className={styles.innerSub}>כל המדיע על תהליך האשפוז</p>
+                    </div>
+                    <div className={styles.pageCard} onClick={() => history.push('/stories')}>
+                        <p className={styles.innerTitle}>סיפורים</p>
+                        <p className={styles.innerSub}>חוויות אישיות </p>
+                    </div>
                     <div className={styles.pageCard} onClick={() => history.push('/gallery')}>
                         <p className={styles.innerTitle}>גלריית תמונות</p>
                         <p className={styles.innerSub}>צפו בגלריית התמונות שלנו</p>
@@ -43,10 +51,6 @@ const Footer = ({ history }: any): any => {
                     <div className={styles.pageCard} onClick={() => history.push('/contactus')}>
                         <p className={styles.innerTitle}>צרו קשר</p>
                         <p className={styles.innerSub}>תיצרו איתנו קשר</p>
-                    </div>
-                    <div className={styles.pageCard} onClick={() => history.push('/stories')}>
-                        <p className={styles.innerTitle}>סיפורים</p>
-                        <p className={styles.innerSub}>חוויות אישיות </p>
                     </div>
                 </div>
             </div>
