@@ -39,7 +39,7 @@ const Donate = ({ history, width }: any): any => {
     /** Here you can call your backend API
       endpoint and update the database */
     console.log(details, data);
-
+    history.push('/success',{response:'Thank you for Your Donation!'});
   }
 
   return (
