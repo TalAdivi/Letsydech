@@ -36,10 +36,9 @@ const Donate = ({ history, width }: any): any => {
 
 
   const onSuccess = (details: any, data: any) => {
-    /** Here you can call your backend API
-      endpoint and update the database */
-    console.log(details, data);
     history.push('/success',{response:'Thank you for Your Donation!'});
+
+    console.log('Google DSC!')
   }
 
   return (
