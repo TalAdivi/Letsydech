@@ -3,7 +3,7 @@
     place-items: center;
 
     .text{
-        margin-bottom: 5vh;
+        margin-bottom: 1vh;
         display: grid;
         place-items: center;
         border-bottom-style: solid;
@@ -21,4 +21,11 @@
     display: grid;
     place-items: center;
     margin-bottom: 5vh;
+}
+
+.pagination{
+    direction: ltr;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1vh;
 }
