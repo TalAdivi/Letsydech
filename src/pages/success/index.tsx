@@ -6,7 +6,7 @@ import Navbar from '../../shared/components/navbar';
 const Sucess = ({ history, location }: any) => {
 
     React.useEffect(() => {
-        setInterval(() => history.push('/'), 5000);
+        setTimeout(() => history.push('/'), 5000);
     }, []);
 
     console.log()

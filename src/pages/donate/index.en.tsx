@@ -50,14 +50,8 @@ const DonateEn = ({ history, width }: any): any => {
       {loading ? <Loading loading={loading} /> :
         <div className={styles.container}>
           <div >
-            <h1>Any donate helps</h1>
-            <ReactMarkdown source={`Your contribution will help us to continue to add to the activity and thus you will be partners in working for a reformed society.
-
-Donation by deposit or bank transfer: Mizrahi Bank, account number 322799, branch 472.
-
-A donation to the "By Your Side" organization will help address addicted women and provide optimal conditions for rehabilitation and growth!
-
-The donation is recognized for tax credit purposes`} />
+            <h1>{data?.TitleEn}</h1>
+            <ReactMarkdown source={data?.TextEn} />
           </div>
           <div className={styles.paymentBox}>
             <div className={styles.alignInputs}>

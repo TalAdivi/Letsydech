@@ -13,7 +13,7 @@ import Loading from '../../shared/components/loading';
 import HeaderEu from '../../shared/components/navbar/navbar.en';
 import FooterEn from '../../shared/components/footer/index.en';
 import BannerEn from './banner/index copy';
-import SnippetsEn from './snippets/index copy';
+import SnippetsEn from './snippets/index.en';
 
 const HomeEn = ({ history }: any): any => {
   const [loading, setLoading] = React.useState(true);
@@ -42,18 +42,18 @@ const HomeEn = ({ history }: any): any => {
             <HeaderEu history={history} path={""}/>
             <Grid className={styles.container} container spacing={2} justify='center'>
               <div className={styles.bg} style={{ backgroundImage: `url(${data?.TitleImage.url})` }} > </div>
-              <BannerEn primaryText={'Welcome'} secondaryText={`Aid for Women Affected by Addictions A non-profit registered association, founded in 2012, by women who share the same ideology, out of an understanding of the unique needs of addicted women and in recognition of the lack of response at certain stages of rehabilitation for this population.`} history={history} />
+              <BannerEn primaryText={data?.TitleEn} secondaryText={data?.TitleTextEn} history={history} />
             </Grid>
             <Grid className={styles.content} container spacing={2} justify='center'>
               <SnippetsEn />
             </Grid>
             <Grid className={styles.content} container spacing={2} justify='center'>
               <Grid item xs={10}>
-                <Cards title='Partners' data={data?.SupportersImages!} />
+                <Cards title={data?.SupportersTitleEn!} data={data?.SupportersImages!} />
               </Grid>
             </Grid>
             <Grid id="support" className={styles.donate} container spacing={2} justify='center'>
-              <Donate history={history} primaryText={`Help us thrive`} secondaryText={`Any donate helps`} />
+              <Donate history={history} primaryText={data?.DonationTitleEn} secondaryText={data?.DonationTextEn} btnText={'Donate'} />
             </Grid>
           </div>
 

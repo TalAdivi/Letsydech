@@ -15,6 +15,7 @@ export interface Image {
 
 export interface Gallery {
     Title: string;
+    TitleEn: string;
     Images: Array<Image>;
 };
 

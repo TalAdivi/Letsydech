@@ -9,7 +9,7 @@ import ContactUs from './pages/contactUs'
 import Stories from './pages/stories'
 import Admission from './pages/admission';
 import Success from './pages/success';
-import ContactUsEn from './pages/contactUs/contactUs.en';
+import ContactUsEn from './pages/contactUs/index.en';
 import DonateEn from './pages/donate/index.en';
 import GallaryComponentEn from './pages/gallery/index.en';
 import StoriesEn from './pages/stories/index.en';

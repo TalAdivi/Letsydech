@@ -19,7 +19,6 @@ const AdmissionEn = ({ history, width }: any): any => {
 
   const fetchData = async (): Promise<void> => {
     try {
-      console.log(`${process.env.REACT_APP_BACKEND_URL}/admission`);
       const res: { data: AdmissionModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/admission`);
       const res2: { data: Card[] } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/cards`);
       setData({ ...res.data, Cards: res2.data });
@@ -37,52 +36,20 @@ const AdmissionEn = ({ history, width }: any): any => {
       {loading ? <Loading loading={loading} /> :
         <div className={styles.container}>
           <div className={styles.textContainer}>
-            <p className={styles.title}>Rehab</p>
-            <p className={styles.subTitle}>Here you can find relevant information</p>
+            <p className={styles.title}>{data?.TitleEn}</p>
+            <p className={styles.subTitle}>{data?.TextEn}</p>
             <Button className={styles.btn} size='large' color='primary' variant="contained" onClick={() => history.push('/en/contactus')}>
               We are here for you
             </Button>
 
           </div>
           <div className={styles.cardsContainer}>
-            {/* {data?.Cards.map((card: any) =>
+            {data?.Cards.map((card: Card) =>
               <div className={styles.card}>
-                <h3>{card.Title}</h3>
-                <ReactMarkdown source={card.Text} />
+                <h3>{card.TitleEn}</h3>
+                <ReactMarkdown source={card.TextEn} />
               </div>
-            )} */}
-            <div className={styles.card}>
-              <h3>Rehab center</h3>
-              <ReactMarkdown source={`Framework works for the purposes of diagnosis, physical detoxification, medical and psychosocial treatment and referral for further treatment
-During the period of stay, the recipient receives individual and group professional support and care
-The staff consists of women and accompanies the patients 24 hours a day`} />
-            </div>
-            <div className={styles.card}>
-            <h3>License</h3>
-              <ReactMarkdown source={`he institution of the Ministry of Health's license "License of a medical institution for the treatment of drug users". No. 15/6/30`} />
-            </div>
-            <div className={styles.card}>
-            <h3>Criteria for admission</h3>
-              <ReactMarkdown source={`Over the age of 18,
-Addicted to substances,
-Psychoactive,
-With minimal motivation,
-Perform the required tests`} />
-            </div>
-            <div className={styles.card}>
-            <h3>Required tests</h3>
-              <ReactMarkdown source={`Chest photo
-A.C.G,
-Blood count,
-V.D.R.L,
-.H.I.V`} />
-            </div>
-            <div className={styles.card}>
-            <h3>Required documents</h3>
-              <ReactMarkdown source={`ID,
-Updated social report,
-A medical report`} />
-            </div>
+            )}
           </div>
         </div>
       }

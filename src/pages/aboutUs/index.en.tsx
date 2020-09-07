@@ -50,10 +50,10 @@ const AboutUsEn = ({ history, width }: any): any => {
         <div>
           <div className={styles.container}>
             <div className={styles.bg}>
-              <h1>{data?.Title}</h1>
-              <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >Aid for Women Affected by Addictions A non-profit registered association, founded in 2012, by women who share the same ideology, out of an understanding of the unique needs of addicted women and in recognition of the lack of response at certain stages of rehabilitation for this population. The association aims to promote activity in a number of areas that serve both the individual and society in general:</Typography>
-              <Typography align="center" className={styles.text2Margin}>Providing information and professional assistance in issues such as detoxification, mental health care, assistance in exercising rights. To be a safe, respectful and supportive place for women affected by addiction. Act with the authorities to adopt a progressive policy regarding the treatment of addicted women. Raise awareness among the public of the close link between violence and sexual violence in particular and the development of addictions among women.</Typography>
-              <Typography align="center" className={styles.text3Margin}>The target population of the association is women affected by addictions, from the age of 18 and up. Studies conducted in Israel and around the world show that women who use addiction rehabilitation services have different demographic characteristics than men who need these services: these are mainly the unemployed, who, unlike men, are less likely to take part in criminal activities. Data from treatment centers for women addicted to drugs and alcohol in Israel and abroad show that over 90% of women in these settings have been sexually assaulted in the past and sexual trauma is seen as a decisive factor in their addiction. For many years, there was no awareness of this language among the welfare services and all addiction treatment programs were built according to a model that was mainly suitable for the male criminal population. Which also consists overwhelmingly of men.</Typography>
+              <h1>{data?.TitleEn}</h1>
+              <Typography align="center" color="textPrimary" variant="h6" className={styles.text1Margin} >{data?.Text1En}</Typography>
+              <Typography align="center" className={styles.text2Margin}>{data?.Text2En}</Typography>
+              <Typography align="center" className={styles.text3Margin}>{data?.Text3En}</Typography>
             </div>
             {data?.Images.length === 0 ? null :
               <div className={styles.gallery}>

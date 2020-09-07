@@ -7,11 +7,17 @@ export interface Supporters{
 
 export interface HomePage{
     Title:string;
+    TitleEn: string;
     TitleImage: Image;
     TitleText: string;
+    TitleTextEn: string;
+    SupportersTitleEn: string;
+    SupportersTextEn: string;
     SupportersImages:Array<Image>;
-    SupporterTitle: string;
-    SupporterText: string;
+    SupportersTitle: string;
+    SupportersText: string;
     DonationTitle: string;
+    DonationTitleEn: string;
     DonationText: string;
+    DonationTextEn: string;
 }

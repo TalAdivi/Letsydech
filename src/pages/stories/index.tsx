@@ -42,7 +42,7 @@ const Stories = ({ history }: any): any => {
             </div>
           </div>
           <div className={styles.storiesContainer}>
-            {blogs?.map((blog: any) => <Story key={blog.id} data={blog} />)}
+            {blogs?.map((blog: StoryModel) => <Story key={blog.id} data={blog} />)}
           </div>
         </>
       }

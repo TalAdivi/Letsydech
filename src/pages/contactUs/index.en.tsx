@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
 import { Grid, GridList, GridListTile, Typography, Box, Divider, Button } from '@material-ui/core';
-import Navbar from '../../shared/components/navbar';
 import styles from './contactUs-en.module.scss';
 import Axios from 'axios';
 import Loading from '../../shared/components/loading';
