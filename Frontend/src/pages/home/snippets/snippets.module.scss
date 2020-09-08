@@ -16,7 +16,7 @@
     place-items: center;
     background-color: #fed9b7;
     margin: 5px;
-    width: 15vw;
+    width: 80%;
     border-radius: 10px;
     min-height: 30vh;
     p{
@@ -30,7 +30,6 @@
 
     .icon {
         margin-top: 10px;
-        width: 10vw;
     }
 }
 
@@ -41,5 +40,8 @@
 
     .card{
         width: 80vw;
+        .icon {
+            width: 100%;
+        }
     }
 }

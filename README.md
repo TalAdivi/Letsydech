@@ -1,4 +1,4 @@
-# Letsydech
+# [Letsydech](letsydech.com)
 
 ![LetsydechIcon](https://res.cloudinary.com/dmezfnuzk/image/upload/v1597760165/ezgif_7_f1b10a22ec82_372ac500d4.png "LetsydechIcon")
 
@@ -17,11 +17,3 @@ The website contains information about the center, allows to address inquiries e
  In addition, we provide them a CMS platform to control the website content (e.g. photos, information, stories) in easy and intuitive way.
 
  For more information please take a look at  [Content manager repo](https://github.com/TalAdivi/LetsydechCMS)
-
-
-
- ## Technologies
- Code was written in TypeScript with React.
-
-
-
