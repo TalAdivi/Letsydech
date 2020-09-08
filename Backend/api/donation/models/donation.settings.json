@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "donations",
+  "info": {
+    "name": "Donation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "richtext"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "TitleEn": {
+      "type": "string"
+    },
+    "TextEn": {
+      "type": "richtext"
+    }
+  }
+}

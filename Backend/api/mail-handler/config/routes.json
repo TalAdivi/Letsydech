@@ -1,0 +1,14 @@
+{
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/hello",
+        "handler": "mail-handler.exampleAction"
+      },
+      {
+        "method": "POST",
+        "path": "/sendmail",
+        "handler": "mail-handler.sendMail"
+      }
+    ]
+  }

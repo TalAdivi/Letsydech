@@ -1,0 +1,71 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "name": "HomePage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "TitleText": {
+      "type": "richtext"
+    },
+    "TitleImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "SupportersTitle": {
+      "type": "string"
+    },
+    "SupportersText": {
+      "type": "richtext"
+    },
+    "SupportersImages": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "DonationTitle": {
+      "type": "string"
+    },
+    "DonationText": {
+      "type": "richtext"
+    },
+    "TitleEn": {
+      "type": "string"
+    },
+    "TitleTextEn": {
+      "type": "richtext"
+    },
+    "SupportersTitleEn": {
+      "type": "string"
+    },
+    "SupportersTextEn": {
+      "type": "richtext"
+    },
+    "DonationTitleEn": {
+      "type": "string"
+    },
+    "DonationTextEn": {
+      "type": "richtext"
+    }
+  }
+}

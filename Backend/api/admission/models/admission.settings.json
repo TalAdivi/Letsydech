@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "admissions",
+  "info": {
+    "name": "Admission"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "richtext"
+    },
+    "TitleEn": {
+      "type": "string"
+    },
+    "TextEn": {
+      "type": "richtext"
+    }
+  }
+}
