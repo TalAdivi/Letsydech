@@ -1,7 +1,6 @@
 # Letsydech Backend Server
 
-This is the content manager for [Letsydech website](https://github.com/TalAdivi/Letsydech).
-
+This is the content manager for [Letsydech website](letsydech.com).
 
 The foundation requested a platform where they can manage their own content on the fly in an easy and intuitive way.
 
@@ -15,6 +14,7 @@ Please look at a [Short overall video](https://drive.google.com/file/d/1Fs_J_8S1
 
 
 ## Technologies
+
 Strapi as CMS manager.
 
 Photos uploaded to Cloudinary.
