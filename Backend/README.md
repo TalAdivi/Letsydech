@@ -1,4 +1,4 @@
-# LetsydechCMS
+# Letsydech Backend Server
 
 This is the content manager for [Letsydech website](https://github.com/TalAdivi/Letsydech).
 
