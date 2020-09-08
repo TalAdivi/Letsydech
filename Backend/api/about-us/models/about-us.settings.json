@@ -1,0 +1,59 @@
+{
+  "kind": "singleType",
+  "collectionName": "aboutuses",
+  "info": {
+    "name": "AboutUs"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Text1": {
+      "type": "richtext"
+    },
+    "Text2": {
+      "type": "richtext"
+    },
+    "Text3": {
+      "type": "richtext"
+    },
+    "Images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Licenses": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "TitleEn": {
+      "type": "string"
+    },
+    "Text1En": {
+      "type": "richtext"
+    },
+    "Text2En": {
+      "type": "richtext"
+    },
+    "Text3En": {
+      "type": "richtext"
+    }
+  }
+}

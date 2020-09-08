@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/admission",
+      "handler": "admission.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/admission",
+      "handler": "admission.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/admission",
+      "handler": "admission.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
