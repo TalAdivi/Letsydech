@@ -8,41 +8,41 @@ import { Image } from '../../models/gallery.model';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: 'flex',
-    },
-    drawer: {
-      [theme.breakpoints.up('sm')]: {
-        width: drawerWidth,
-        flexShrink: 0,
-        backgroundColor: '#fdfcdc'
-      },
-    },
-    appBar: {
-      [theme.breakpoints.up('sm')]: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
-      },
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-      [theme.breakpoints.up('sm')]: {
-        display: 'none',
-      },
-    },
-    toolbar: theme.mixins.toolbar,
-    drawerPaper: {
-      width: drawerWidth,
-      backgroundColor: '#fdfcdc'
-    },
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-    },
-  }),
-);
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     root: {
+//       display: 'flex',
+//     },
+//     drawer: {
+//       [theme.breakpoints.up('sm')]: {
+//         width: drawerWidth,
+//         flexShrink: 0,
+//         backgroundColor: '#fdfcdc'
+//       },
+//     },
+//     appBar: {
+//       [theme.breakpoints.up('sm')]: {
+//         width: `calc(100% - ${drawerWidth}px)`,
+//         marginLeft: drawerWidth,
+//       },
+//     },
+//     menuButton: {
+//       marginRight: theme.spacing(2),
+//       [theme.breakpoints.up('sm')]: {
+//         display: 'none',
+//       },
+//     },
+//     toolbar: theme.mixins.toolbar,
+//     drawerPaper: {
+//       width: drawerWidth,
+//       backgroundColor: '#fdfcdc'
+//     },
+//     content: {
+//       flexGrow: 1,
+//       padding: theme.spacing(3),
+//     },
+//   }),
+// );
 
 const HeaderEu = ({ history, path }: any): any => {
   const [data, setData] = React.useState<{ Logo: Image }>();
@@ -85,7 +85,7 @@ const HeaderEu = ({ history, path }: any): any => {
       </ListItem>
       <Divider />
       <ListItem button key={'Gallery'} onClick={() => history.push('/en/gallery')}>
-        <ListItemText className={styles.listItem} primary={'גלריית תמונות'} />
+        <ListItemText className={styles.listItem} primary={'Gallery'} />
       </ListItem>
       <Divider />
       <ListItem button key={'Donate'} onClick={() => history.push('/en/donate')}>
@@ -93,7 +93,7 @@ const HeaderEu = ({ history, path }: any): any => {
       </ListItem>
       <Divider />
       <ListItem button key={'Contact us'} onClick={() => history.push('/en/contactUs')}>
-        <ListItemText className={styles.listItem} primary={'צרו Contact us'} />
+        <ListItemText className={styles.listItem} primary={'Contact us'} />
       </ListItem>
       <Divider />
       <ListItem button key={'Hebrew'} onClick={() => history.push(`/${path}`)}>
@@ -118,14 +118,14 @@ const HeaderEu = ({ history, path }: any): any => {
               <Grid className={styles.grid} container alignItems="flex-start" justify="flex-start" direction="column">
                 <Router>
                   <div>
-                    <Tab label='Home page' onClick={() => history.push('/en')} />
-                    <Tab label='About us' onClick={() => history.push('/en/aboutUs')} />
-                    <Tab label='Admission' onClick={() => history.push('/en/admission')} />
-                    <Tab label='Stories' onClick={() => history.push('/en/stories')} />
-                    <Tab label='Gallery' onClick={() => history.push('/en/gallery')} />
-                    <Tab label='Donate' onClick={() => history.push('/en/donate')} />
-                    <Tab label='Contact us' onClick={() => history.push('/en/contactUs')} />
-                    <Tab label='Hebrew' onClick={() => history.push(`/${path}`)} />
+                    <Tab className={styles.tab} label='Home page' onClick={() => history.push('/en')} />
+                    <Tab className={styles.tab} label='About us' onClick={() => history.push('/en/aboutUs')} />
+                    <Tab className={styles.tab} label='Admission' onClick={() => history.push('/en/admission')} />
+                    <Tab className={styles.tab} label='Stories' onClick={() => history.push('/en/stories')} />
+                    <Tab className={styles.tab} label='Gallery' onClick={() => history.push('/en/gallery')} />
+                    <Tab className={styles.tab} label='Donate' onClick={() => history.push('/en/donate')} />
+                    <Tab className={styles.tab} label='Contact us' onClick={() => history.push('/en/contactUs')} />
+                    <Tab className={styles.tab} label='Hebrew' onClick={() => history.push(`/${path}`)} />
                   </div>
                 </Router>
               </Grid>

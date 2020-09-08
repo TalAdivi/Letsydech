@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './snippets.module.scss';
 import Axios from 'axios';
 import ReactMarkdown from "react-markdown";
-import {Snippets as SnippetsModel } from '../../../shared/models/snippets';
+import { Snippets as SnippetsModel } from '../../../shared/models/snippets';
 
-const Snippets = (): any => {
+const SnippetsEn = (): any => {
     const [data, setData] = React.useState<Array<SnippetsModel>>();
 
     React.useEffect((): any => {
@@ -27,17 +27,19 @@ const Snippets = (): any => {
                 <div className={styles.container}>
                     {data?.map((snippet: SnippetsModel) =>
                         <div className={styles.card}>
-                            <h3>{snippet.Title}</h3>
-                            <ReactMarkdown source={snippet.Text} />
+                            <h3>{snippet.TitleEn}</h3>
+                            <ReactMarkdown source={snippet.TextEn} />
                             {!snippet.Image ? null :
                                 <div className={styles.icon}><img src={snippet.Image.url} /></div>
                             }
                         </div>
                     )}
+
+
                 </div>
             }
         </>
     )
 }
 
-export default Snippets;
+export default SnippetsEn;

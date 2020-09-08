@@ -85,10 +85,10 @@ const GallaryComponentEn = ({ history }: any): any => {
       {loading ? <Loading loading={loading} /> :
         <>
           <div className={styles.container}>
-            <h1>Our place</h1>
+            <h1>{data?.TitleEn}</h1>
           </div>
           <div className={styles.imageGallery}>
-            <Gallery images={genImages()} enableLightbox={true} enableImageSelection={false} />
+            <Gallery images={ genImages()} enableLightbox={true} enableImageSelection={false} />
           </div>
         </>
       }

@@ -7,4 +7,8 @@ export interface AboutUs {
     Text2: string;
     Text3: string;
     Licenses: Array<Image>;
+    TitleEn: string;
+    Text1En: string;
+    Text2En: string;
+    Text3En: string;
 };

@@ -20,28 +20,44 @@
         cursor: pointer;
     }
 
+    .tab{
+        span{
+            font-size: 1rem !important;
+            
+        }
+    }
+
     button{
         color: #fdfcdc;
         opacity: 100;
+        
+        
     }
+
 
     .navDrawer{
         display: block;
         float: left;
         left: 0;
+        
     }
 }
+
 
 .listItem{
     padding: 10px;
     color: #fdfcdc;
     text-align: center;
+    
 }
 
 
 .listItem:hover, .listItem:active{
     color: #fed9b7;
+    
 }
+
+
 
 
 @media (max-width: 1113px){

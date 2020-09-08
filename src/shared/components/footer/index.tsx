@@ -4,9 +4,10 @@ import Axios from 'axios';
 import { MdEmail } from 'react-icons/md';
 import { FaFacebookSquare, FaPhoneSquareAlt } from 'react-icons/fa';
 import { TiSocialInstagram } from 'react-icons/ti';
+import { IFooter } from '../../models/footer';
 
 const Footer = ({ history }: any): any => {
-    const [data, setData] = React.useState<{ Title: string, Text: string, Phone: string, Email: string, Facebook: string, Instagram: string }>();
+    const [data, setData] = React.useState<IFooter>();
 
     React.useEffect((): any => {
         fetchData();
@@ -14,7 +15,7 @@ const Footer = ({ history }: any): any => {
 
     const fetchData = async (): Promise<void> => {
         try {
-            const res: { data: { Title: string, Text: string, Phone: string, Email: string, Facebook: string, Instagram: string } } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/footer`);
+            const res: { data: IFooter } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/footer`);
             setData(res.data);
         } catch (e) {
             console.log(e);
@@ -30,7 +31,7 @@ const Footer = ({ history }: any): any => {
                 <div className={styles.pagesNav}>
                     <div className={styles.pageCard} onClick={() => history.push('/aboutus')}>
                         <p className={styles.innerTitle}>אודותינו</p>
-                        <p className={styles.innerSub}>קיראו עלינו עוד עלינו</p>
+                        <p className={styles.innerSub}>קיראו עוד עלינו</p>
                     </div>
                     <div className={styles.pageCard} onClick={() => history.push('/admission')}>
                         <p className={styles.innerTitle}>אישפוזית לנשים</p>
