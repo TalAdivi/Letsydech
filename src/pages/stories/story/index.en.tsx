@@ -4,7 +4,6 @@ import { Story as StoryModel } from '../../../shared/models/stories.model';
 import ReactMarkdown from "react-markdown";
 
 const StoryEn = ({ data }: { data: StoryModel }) => {
-    console.log()
     return (
         <div className={styles.container}>
 
