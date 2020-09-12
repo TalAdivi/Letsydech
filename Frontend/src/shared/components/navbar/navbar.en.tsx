@@ -70,7 +70,7 @@ const HeaderEn = ({ history, path }: any): any => {
       <AppBar position="static" color="transparent">
         <div className={styles.container}>
           <div className={styles.logo}>
-            <img src={data?.Logo.url} alt="logo" onClick={() => history.push('/')} />
+            <img src={data?.Logo.url} alt="logo" onClick={() => history.push('/en')} />
           </div>
           <div className={styles.nav}>
             {!setNav ?
