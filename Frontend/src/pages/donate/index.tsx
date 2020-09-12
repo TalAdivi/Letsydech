@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import { Typography, Button, Input } from '@material-ui/core';
+import { Button, Input } from '@material-ui/core';
 import Navbar from '../../shared/components/navbar';
 import { Donation } from '../../shared/models/donate.model';
 import Loading from '../../shared/components/loading';
@@ -14,6 +14,7 @@ const Donate = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<Donation>();
   const [currAmount, setCurrAmount] = React.useState(10);
+  const [displayAmount, setDisplayAmount] = React.useState(true);
 
   React.useEffect((): any => {
     fetchImages();
@@ -36,7 +37,7 @@ const Donate = ({ history, width }: any): any => {
 
 
   const onSuccess = (details: any, data: any) => {
-    history.push('/success',{response:'Thank you for Your Donation!'});
+    history.push('/success', { response: 'Thank you for Your Donation!' });
 
     console.log('Google DSC!')
   }
@@ -50,22 +51,24 @@ const Donate = ({ history, width }: any): any => {
             <h1>{data?.Title}</h1>
             <ReactMarkdown source={data?.Text} />
           </div>
-          <div className={styles.paymentBox}>
-            <div className={styles.alignInputs}>
-              <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(10)}>10₪</Button>
+          {!displayAmount ? null :
+            <div className={styles.paymentBox}>
+              <div className={styles.alignInputs}>
+                <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(10)}>10₪</Button>
+              </div>
+              <div className={styles.alignInputs}>
+                <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(50)} >50₪</Button>
+              </div>
+              <div className={styles.alignInputs}>
+                <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(100)}>100₪</Button>
+              </div>
+              <div className={[styles.alignInputs, styles.inputColor].join(' ')}>
+                <Input disableUnderline={true} type='number' placeholder='סכום ידני...' onChange={(event) => {
+                  setCurrAmount(Number(event.target.value))
+                }} />
+              </div>
             </div>
-            <div className={styles.alignInputs}>
-              <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(50)} >50₪</Button>
-            </div>
-            <div className={styles.alignInputs}>
-              <Button className={styles.btnVal} variant="contained" onClick={() => setCurrAmount(100)}>100₪</Button>
-            </div>
-            <div className={[styles.alignInputs, styles.inputColor].join(' ')}>
-              <Input disableUnderline={true} type='number' placeholder='סכום ידני...' onChange={(event) => {
-                setCurrAmount(Number(event.target.value))
-              }} />
-            </div>
-          </div>
+          }
           <div className={styles.dunationSum}>
             <p className={styles.amountToDonate}>{`סכום לתרומה  ${currAmount}₪`}</p>
           </div>
@@ -73,6 +76,7 @@ const Donate = ({ history, width }: any): any => {
             <PayPalButton
               amount={currAmount}
               onSuccess={(details: any, data: any) => onSuccess(details, data)}
+              onClick={() => setDisplayAmount(false)}
               options={{
                 clientId: process.env.REACT_APP_PAYPAL_CLINET_ID,
                 currency: "ILS"
