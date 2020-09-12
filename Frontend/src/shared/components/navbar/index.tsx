@@ -22,7 +22,6 @@ const Header = ({ history, path }: any): any => {
     try {
       const res: { data: { Logo: Image } } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/info`);
       setData(res.data);
-      console.log(res.data);
     } catch (e) {
       console.log(e);
     }

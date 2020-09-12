@@ -15,7 +15,7 @@ const Cards = ({ title, data }: { title: string, data: Array<Image>, width: any 
         : null}
       {data ? <div className={styles.supporters}>
         {data.map((elem): any =>
-          <div className={styles.supporter}>
+          <div key={elem.id} className={styles.supporter}>
             <Card icon={elem.url} text={elem.caption} />
           </div>
         )}

@@ -3,9 +3,7 @@ import Axios from 'axios';
 import styles from './gallery.module.scss';
 import { Gallery as GalleryModel } from '../../shared/models/gallery.model';
 import Gallery from 'react-grid-gallery';
-import Footer from '../../shared/components/footer';
 import Loading from '../../shared/components/loading';
-import Navbar from '../../shared/components/navbar';
 import FooterEn from '../../shared/components/footer/index.en';
 import HeaderEn from '../../shared/components/navbar/navbar.en';
 

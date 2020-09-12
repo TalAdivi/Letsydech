@@ -7,7 +7,6 @@ import Axios from 'axios';
 import Loading from '../../shared/components/loading';
 import Footer from '../../shared/components/footer';
 import { Info as InfoModel, Form as FormModel } from '../../shared/models/contactus.model';
-import { useLocation } from 'react-router-dom';
 
 const ContactUs = ({ history }: any): any => {
   const { register, handleSubmit } = useForm<FormModel>();

@@ -6,7 +6,6 @@ import Axios from 'axios';
 import Loading from '../../shared/components/loading';
 import FooterEn from '../../shared/components/footer/index.en';
 import { Info as InfoModel, Form as FormModel } from '../../shared/models/contactus.model';
-import { useLocation } from 'react-router-dom';
 import HeaderEn from '../../shared/components/navbar/navbar.en';
 
 const ContactUsEn = ({ history }: any): any => {

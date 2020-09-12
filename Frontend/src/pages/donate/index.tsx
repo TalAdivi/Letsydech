@@ -24,7 +24,6 @@ const Donate = ({ history, width }: any): any => {
       console.log(`${process.env.REACT_APP_BACKEND_URL}/donation`);
       const res: { data: Donation } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/donation`);
       setData(res.data);
-      console.log(res.data);
     } catch (e) {
       console.log(e);
     } finally {

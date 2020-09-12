@@ -15,7 +15,6 @@ const Snippets = (): any => {
     try {
       const res: { data: Array<SnippetsModel> } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/snippets`);
       setData(res.data);
-      console.log(res.data);
     } catch (e) {
       console.log(e);
     }

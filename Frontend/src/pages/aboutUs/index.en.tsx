@@ -1,8 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
 import { Typography } from '@material-ui/core';
-import Navbar from '../../shared/components/navbar';
-import Footer from '../../shared/components/footer';
 import { AboutUs as AboutUsModel } from '../../shared/models/aboutus.model';
 import Loading from '../../shared/components/loading';
 import styles from './aboutUs.module.scss';
