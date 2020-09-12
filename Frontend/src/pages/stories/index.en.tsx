@@ -4,7 +4,7 @@ import styles from './stories.module.scss';
 import Loading from '../../shared/components/loading';
 import { Pagination } from '@material-ui/lab'
 import { Stories as StoriesModel, Story as StoryModel } from '../../shared/models/stories.model';
-import HeaderEu from '../../shared/components/navbar/navbar.en';
+import HeaderEn from '../../shared/components/navbar/navbar.en';
 import FooterEn from '../../shared/components/footer/index.en';
 import StoryEn from './story/index.en';
 
@@ -50,7 +50,7 @@ const StoriesEn = ({ history }: any): any => {
 
   return (
     <div>
-      <HeaderEu history={history} path={"stories"} />
+      <HeaderEn history={history} path={"stories"} />
       {loading ? <Loading loading={loading} /> :
         <>
           <div className={styles.container}>
@@ -69,7 +69,7 @@ const StoriesEn = ({ history }: any): any => {
       }
       <FooterEn history={history} />
     </div>
-  )
-}
+  );
+};
 
-export default StoriesEn
+export default StoriesEn;

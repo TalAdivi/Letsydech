@@ -7,17 +7,13 @@ import Footer from '../../shared/components/footer';
 import Loading from '../../shared/components/loading';
 import Navbar from '../../shared/components/navbar';
 import FooterEn from '../../shared/components/footer/index.en';
-import HeaderEu from '../../shared/components/navbar/navbar.en';
+import HeaderEn from '../../shared/components/navbar/navbar.en';
 
 const GallaryComponentEn = ({ history }: any): any => {
   const [data, setData] = React.useState<GalleryModel>();
   const [loading, setLoading] = React.useState(false);
-  const [setNav, setSetNav] = React.useState(window.innerWidth);
 
   React.useEffect((): any => {
-    window.addEventListener('resize', () => {
-      setSetNav(window.innerWidth);
-    });
     fetchData();
   }, []);
 
@@ -33,35 +29,32 @@ const GallaryComponentEn = ({ history }: any): any => {
     }
   };
 
-  const getViewSize = (): number => {
-    if (1920 <= setNav)
-      return 4;
-    if (1280 <= setNav)
-      return 3;
-    if (960 <= setNav)
-      return 2;
-
-    return 1;
-  }
-
   const genImages = (): Array<any> => {
     const getThumbnail = (image: any): any => {
-      if(!image.formats.small || !image.formats.medium || !image.formats.large )
-        if(!image.formats.thumbnail)
+      if (!image.formats.small || !image.formats.medium || !image.formats.large)
+        if (!image.formats.thumbnail)
           return image.url;
         else
           return image.formats.thumbnail.url;
 
-      const size = getViewSize();
-      switch (size) {
+      let choice = 1;
+
+      if (1920 <= window.innerWidth)
+        choice = 4;
+      if (1280 <= window.innerWidth)
+        choice = 3;
+      if (960 <= window.innerWidth)
+        choice = 2;
+
+      switch (choice) {
         case 1:
           return image.formats.small ? image.formats.small.url : image.url;
         case 2:
           return image.formats.medium ? image.formats.medium.url : image.url;
         case 3:
-          return image.formats.large ? image.formats.large.url : image.url ;
+          return image.formats.large ? image.formats.large.url : image.url;
         case 4:
-          return image.formats.large ? image.formats.large.url : image.url ;
+          return image.formats.large ? image.formats.large.url : image.url;
       }
     };
 
@@ -81,18 +74,18 @@ const GallaryComponentEn = ({ history }: any): any => {
 
   return (
     <div>
-      <HeaderEu history={history} path={"gallery"} />
+      <HeaderEn history={history} path={"gallery"} />
       {loading ? <Loading loading={loading} /> :
         <>
           <div className={styles.container}>
             <h1>{data?.TitleEn}</h1>
           </div>
           <div className={styles.imageGallery}>
-            <Gallery images={ genImages()} enableLightbox={true} enableImageSelection={false} />
+            <Gallery images={genImages()} enableLightbox={true} enableImageSelection={false} />
           </div>
         </>
       }
-      <FooterEn history={history}/>
+      <FooterEn history={history} />
     </div >
   );
 };

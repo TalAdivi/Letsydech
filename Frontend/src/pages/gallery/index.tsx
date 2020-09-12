@@ -10,12 +10,8 @@ import Navbar from '../../shared/components/navbar';
 const GallaryComponent = ({ history }: any): any => {
   const [data, setData] = React.useState<GalleryModel>();
   const [loading, setLoading] = React.useState(false);
-  const [setNav, setSetNav] = React.useState(window.innerWidth);
 
   React.useEffect((): any => {
-    window.addEventListener('resize', () => {
-      setSetNav(window.innerWidth);
-    });
     fetchData();
   }, []);
 
@@ -31,35 +27,32 @@ const GallaryComponent = ({ history }: any): any => {
     }
   };
 
-  const getViewSize = (): number => {
-    if (1920 <= setNav)
-      return 4;
-    if (1280 <= setNav)
-      return 3;
-    if (960 <= setNav)
-      return 2;
-
-    return 1;
-  }
-
   const genImages = (): Array<any> => {
     const getThumbnail = (image: any): any => {
-      if(!image.formats.small || !image.formats.medium || !image.formats.large )
-        if(!image.formats.thumbnail)
+      if (!image.formats.small || !image.formats.medium || !image.formats.large)
+        if (!image.formats.thumbnail)
           return image.url;
         else
           return image.formats.thumbnail.url;
 
-      const size = getViewSize();
-      switch (size) {
+      let choice = 1;
+
+      if (1920 <= window.innerWidth)
+        choice = 4;
+      if (1280 <= window.innerWidth)
+        choice = 3;
+      if (960 <= window.innerWidth)
+        choice = 2;
+
+      switch (choice) {
         case 1:
           return image.formats.small ? image.formats.small.url : image.url;
         case 2:
           return image.formats.medium ? image.formats.medium.url : image.url;
         case 3:
-          return image.formats.large ? image.formats.large.url : image.url ;
+          return image.formats.large ? image.formats.large.url : image.url;
         case 4:
-          return image.formats.large ? image.formats.large.url : image.url ;
+          return image.formats.large ? image.formats.large.url : image.url;
       }
     };
 
@@ -90,7 +83,7 @@ const GallaryComponent = ({ history }: any): any => {
           </div>
         </>
       }
-      <Footer history={history}/>
+      <Footer history={history} />
     </div >
   );
 };

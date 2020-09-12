@@ -7,23 +7,21 @@ import { AboutUs as AboutUsModel } from '../../shared/models/aboutus.model';
 import Loading from '../../shared/components/loading';
 import styles from './aboutUs.module.scss';
 import ImageGallery from 'react-image-gallery';
-import HeaderEu from '../../shared/components/navbar/navbar.en';
+import HeaderEn from '../../shared/components/navbar/navbar.en';
 import FooterEn from '../../shared/components/footer/index.en';
 
 const AboutUsEn = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
+
   const [data, setData] = React.useState<AboutUsModel>();
   React.useEffect((): any => {
     fetchData();
   }, []);
 
-
   const fetchData = async (): Promise<void> => {
     try {
-      console.log(`${process.env.REACT_APP_BACKEND_URL}/about-us`);
       const res: { data: AboutUsModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/about-us`);
       setData(res.data);
-      console.log(res.data);
     } catch (e) {
       console.log(e);
     } finally {
@@ -41,11 +39,11 @@ const AboutUsEn = ({ history, width }: any): any => {
         });
     });
     return arr;
-  }
+  };
 
   return (
     <div>
-      <HeaderEu history={history} path={"aboutus"} />
+      <HeaderEn history={history} path={"aboutus"} />
       {loading ? <Loading loading={loading} /> :
         <div>
           <div className={styles.container}>

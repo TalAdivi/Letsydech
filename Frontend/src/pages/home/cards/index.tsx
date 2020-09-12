@@ -1,27 +1,11 @@
 import React from 'react';
-import { Grid, GridList, GridListTile, Typography } from '@material-ui/core';
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import { Grid } from '@material-ui/core';
+import withWidth from '@material-ui/core/withWidth';
 import Card from './card';
-
 import styles from './cards.module.scss';
 import { Image } from '../../../shared/models/gallery.model';
 
-
-const getCols = (screenWidth: any) => {
-  // console.log('screenWidth -> ', screenWidth)
-
-  if (isWidthUp('lg', screenWidth)) {
-    return 5;
-  }
-
-  if (isWidthUp('md', screenWidth)) {
-    return 3;
-  }
-  return 2;
-};
-
-const Cards = ({ title, data, width }: { title: string, data: Array<Image>, width: any }) => {
-  const cols = getCols(width)
+const Cards = ({ title, data }: { title: string, data: Array<Image>, width: any }) => {
   return (
     <Grid container justify="center">
       {title !== '' ?

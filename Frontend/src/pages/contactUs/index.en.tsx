@@ -1,49 +1,27 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import { useForm } from "react-hook-form";
-import { Grid, GridList, GridListTile, Typography, Box, Divider, Button } from '@material-ui/core';
+import { Box, Button } from '@material-ui/core';
 import styles from './contactUs-en.module.scss';
 import Axios from 'axios';
 import Loading from '../../shared/components/loading';
 import FooterEn from '../../shared/components/footer/index.en';
 import { Info as InfoModel, Form as FormModel } from '../../shared/models/contactus.model';
 import { useLocation } from 'react-router-dom';
-import HeaderEu from '../../shared/components/navbar/navbar.en';
+import HeaderEn from '../../shared/components/navbar/navbar.en';
 
-const postRequestParams = {
-  "sender": "letsydechWebsite@gmail.com",
-  "from": {
-    "name": "fadi.atamny",
-    "email": "fadi.atamny@gmail.com",
-    "phone": "132456"
-  },
-  "message": {
-    "subject": "test",
-    "text": "test"
-  }
-}
-
-const ContactUsEn = ({ history, width }: any): any => {
+const ContactUsEn = ({ history }: any): any => {
   const { register, handleSubmit } = useForm<FormModel>();
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<InfoModel>();
-  const location = useLocation();
 
   React.useEffect((): any => {
-    console.log('location.pathname -> ', location.pathname)
-    if(location.pathname.startsWith('/en/')){
-      console.log('')
-    }
     fetchData();
   }, []);
 
   const fetchData = async (): Promise<void> => {
     try {
-      
       const res: { data: InfoModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/info`);
       setData(res.data);
-      postRequestParams.sender = res.data?.Email!;
-      postRequestParams.message.subject = res.data?.MailSubject!;
     } catch (e) {
       console.log(e);
     } finally {
@@ -56,18 +34,25 @@ const ContactUsEn = ({ history, width }: any): any => {
     return false;
   };
 
-  const onSubmit = async (data: FormModel) => {
+  const onSubmit = async (formData: FormModel) => {
     const obj = document.getElementById('errorTxt');
     if (obj)
       obj.innerHTML = '';
-      
-    postRequestParams.from.name = data.name;
-    postRequestParams.from.email = data.email;
-    postRequestParams.from.phone = data.phoneNumber;
-    postRequestParams.message.text = data.freeText;
-    postRequestParams.message.subject += `Message From: ${data.name} ${new Date().toISOString()}`
 
-    if (!validate(data)) {
+    const message = {
+      "sender": data ? data.Email : 'letsydechwebiste@gmail.com',
+      "from": {
+        "name": formData.name,
+        "email": formData.email,
+        "phone": formData.phoneNumber
+      },
+      "message": {
+        "subject": `${data?.MailSubject} From: ${formData.name} ${new Date().toISOString()}`,
+        "text": formData.freeText
+      }
+    };
+
+    if (!validate(formData)) {
       if (obj)
         obj.innerHTML = 'Missing Form Variables';
       return;
@@ -75,7 +60,7 @@ const ContactUsEn = ({ history, width }: any): any => {
 
     document.getElementById('submitBtn')?.setAttribute('disabled', 'true');
     try {
-      await Axios.post(`${process.env.REACT_APP_BACKEND_URL}/sendmail`, postRequestParams);
+      await Axios.post(`${process.env.REACT_APP_BACKEND_URL}/sendmail`, message);
       history.push('/success', { response: 'Mail send successfully!' });
     } catch (e) {
       document.getElementById('submitBtn')?.setAttribute('disabled', 'false');
@@ -83,10 +68,10 @@ const ContactUsEn = ({ history, width }: any): any => {
         obj.innerHTML = 'Error Occured. Please Try Again.';
     }
   };
-// HeaderEu
+
   return (
     <div>
-      <HeaderEu history={history} path={"contactus"} />
+      <HeaderEn history={history} path={"contactus"} />
       {loading ? <Loading loading={loading} /> :
         <div className={styles.root}>
           <div className={styles.container}>
@@ -128,7 +113,7 @@ const ContactUsEn = ({ history, width }: any): any => {
           </div>
         </div>
       }
-      
+
       <FooterEn history={history} />
     </div>
   );

@@ -29,16 +29,16 @@ const Home = ({ history }: any): any => {
       setLoading(false);
     }
   };
-  
+
   return (
     <div>
       {loading ? <Loading loading={loading} /> :
         <div>
           <div>
-            <Navbar history={history} path={""}/>
+            <Navbar history={history} path={""} />
             <Grid className={styles.container} container spacing={2} justify='center'>
               <div className={styles.bg} style={{ backgroundImage: `url(${data?.TitleImage.url})` }} > </div>
-              <Banner primaryText={data?.Title!} secondaryText={data?.TitleText!} history={history} />
+              <Banner primaryText={data?.Title!} secondaryText={data?.TitleText!} history={history} buttonText={['רוצים לדבר?', 'בואו לתמוך בנו']} />
             </Grid>
             <Grid className={styles.content} container spacing={2} justify='center'>
               <Snippets />
@@ -49,7 +49,7 @@ const Home = ({ history }: any): any => {
               </Grid>
             </Grid>
             <Grid id="support" className={styles.donate} container spacing={2} justify='center'>
-              <Donate history={history} primaryText={data?.DonationTitle!} secondaryText={data?.DonationText!} btnText={'תרומה'}/>
+              <Donate history={history} primaryText={data?.DonationTitle!} secondaryText={data?.DonationText!} btnText={'תרומה'} />
             </Grid>
           </div>
 

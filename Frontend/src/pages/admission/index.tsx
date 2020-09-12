@@ -8,20 +8,19 @@ import styles from './admission.module.scss';
 import { Admission as AdmissionModel, Card } from '../../shared/models/admission.model';
 import ReactMarkdown from "react-markdown";
 
-const Admission = ({ history, width }: any): any => {
+const Admission = ({ history }: any): any => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<AdmissionModel>();
+
   React.useEffect((): any => {
     fetchData();
   }, []);
 
   const fetchData = async (): Promise<void> => {
     try {
-      console.log(`${process.env.REACT_APP_BACKEND_URL}/admission`);
       const res: { data: AdmissionModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/admission`);
       const res2: { data: Card[] } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/cards`);
       setData({ ...res.data, Cards: res2.data });
-      console.log({ ...res.data, Cards: res2.data });
     } catch (e) {
       console.log(e);
     } finally {

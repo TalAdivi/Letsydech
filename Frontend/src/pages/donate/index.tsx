@@ -9,7 +9,6 @@ import { PayPalButton } from "react-paypal-button-v2";
 import Footer from '../../shared/components/footer'
 import ReactMarkdown from "react-markdown";
 
-
 const Donate = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<Donation>();
@@ -18,9 +17,7 @@ const Donate = ({ history, width }: any): any => {
 
   React.useEffect((): any => {
     fetchImages();
-
   }, []);
-
 
   const fetchImages = async (): Promise<void> => {
     try {
@@ -35,12 +32,9 @@ const Donate = ({ history, width }: any): any => {
     }
   };
 
-
   const onSuccess = (details: any, data: any) => {
-    history.push('/success', { response: 'Thank you for Your Donation!' });
-
-    console.log('Google DSC!')
-  }
+    history.push('/success', { response: 'תודה רבה על תרומתך!' });
+  };
 
   return (
     <div>
@@ -91,4 +85,3 @@ const Donate = ({ history, width }: any): any => {
 };
 
 export default Donate;
-

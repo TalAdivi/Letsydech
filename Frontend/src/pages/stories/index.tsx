@@ -1,6 +1,6 @@
 import React from 'react'
 import Axios from 'axios';
-import {Pagination} from '@material-ui/lab'
+import { Pagination } from '@material-ui/lab'
 import styles from './stories.module.scss';
 import Footer from '../../shared/components/footer';
 import Loading from '../../shared/components/loading';
@@ -35,13 +35,12 @@ const Stories = ({ history }: any): any => {
     }
   };
 
-  const spliceBlogs = (blogs:any): any => {
-    if(!blogs) return null;
+  const spliceBlogs = (blogs: any): any => {
+    if (!blogs) return null;
     let arrayOfBlogs = [];
 
-    while(blogs.length > 0)
-    {
-      arrayOfBlogs.push(blogs.splice(0,pageAmount));  
+    while (blogs.length > 0) {
+      arrayOfBlogs.push(blogs.splice(0, pageAmount));
     }
 
     setPagesCount(arrayOfBlogs.length);
@@ -60,16 +59,16 @@ const Stories = ({ history }: any): any => {
             </div>
           </div>
           <div className={styles.pagination}>
-            <Pagination count={pagesCount} page={index} onChange={(event,val)=> setIndex(val)}/>
+            <Pagination count={pagesCount} page={index} onChange={(event, val) => setIndex(val)} />
           </div>
           <div className={styles.storiesContainer}>
-            {blogs? blogs[index-1].map((blog: any) => <Story key={blog.id} data={blog} />) : null}
+            {blogs ? blogs[index - 1].map((blog: any) => <Story key={blog.id} data={blog} />) : null}
           </div>
         </>
       }
       <Footer history={history} />
     </div>
-  )
-}
+  );
+};
 
-export default Stories
+export default Stories;

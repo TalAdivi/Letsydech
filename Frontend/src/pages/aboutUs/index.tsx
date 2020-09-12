@@ -11,17 +11,15 @@ import ImageGallery from 'react-image-gallery';
 const AboutUs = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
   const [data, setData] = React.useState<AboutUsModel>();
+
   React.useEffect((): any => {
     fetchData();
   }, []);
 
-
   const fetchData = async (): Promise<void> => {
     try {
-      console.log(`${process.env.REACT_APP_BACKEND_URL}/about-us`);
       const res: { data: AboutUsModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/about-us`);
       setData(res.data);
-      console.log(res.data);
     } catch (e) {
       console.log(e);
     } finally {
@@ -39,7 +37,7 @@ const AboutUs = ({ history, width }: any): any => {
         });
     });
     return arr;
-  }
+  };
 
   return (
     <div>

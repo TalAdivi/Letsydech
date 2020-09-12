@@ -1,16 +1,13 @@
 import React from 'react';
 import Axios from 'axios';
-import { Typography, Button, Input } from '@material-ui/core';
-import Navbar from '../../shared/components/navbar';
+import { Button, Input } from '@material-ui/core';
 import { Donation } from '../../shared/models/donate.model';
 import Loading from '../../shared/components/loading';
 import styles from './donate.module.scss';
 import { PayPalButton } from "react-paypal-button-v2";
-import Footer from '../../shared/components/footer'
 import ReactMarkdown from "react-markdown";
 import FooterEn from '../../shared/components/footer/index.en';
-import HeaderEu from '../../shared/components/navbar/navbar.en';
-
+import NavbarEn from '../../shared/components/navbar/navbar.en';
 
 const DonateEn = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
@@ -19,9 +16,7 @@ const DonateEn = ({ history, width }: any): any => {
 
   React.useEffect((): any => {
     fetchImages();
-
   }, []);
-
 
   const fetchImages = async (): Promise<void> => {
     try {
@@ -36,17 +31,13 @@ const DonateEn = ({ history, width }: any): any => {
     }
   };
 
-
   const onSuccess = (details: any, data: any) => {
-    /** Here you can call your backend API
-      endpoint and update the database */
-    console.log(details, data);
-    history.push('/success',{response:'Thank you for Your Donation!'});
-  }
+    history.push('/success', { response: 'Thank you for Your Donation!' });
+  };
 
   return (
     <div>
-      <HeaderEu history={history} path={"donate"} />
+      <NavbarEn history={history} path={"donate"} />
       {loading ? <Loading loading={loading} /> :
         <div className={styles.container}>
           <div >

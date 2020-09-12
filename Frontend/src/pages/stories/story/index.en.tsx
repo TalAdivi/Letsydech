@@ -6,7 +6,9 @@ import ReactMarkdown from "react-markdown";
 const StoryEn = ({ data }: { data: StoryModel }) => {
     return (
         <div className={styles.container}>
-
+            <div className={styles.date}>
+                {new Date(data.createdAt).toUTCString()}
+            </div>
             <div className={styles.card}>
                 <div className={styles.content}>
                     <h3>{data.TitleEn}</h3>

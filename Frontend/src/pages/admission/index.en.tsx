@@ -1,14 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
 import { Button } from '@material-ui/core';
-import Navbar from '../../shared/components/navbar';
-import Footer from '../../shared/components/footer';
 import Loading from '../../shared/components/loading';
 import styles from './admission.module.scss';
 import { Admission as AdmissionModel, Card } from '../../shared/models/admission.model';
 import ReactMarkdown from "react-markdown";
 import FooterEn from '../../shared/components/footer/index.en';
-import HeaderEu from '../../shared/components/navbar/navbar.en';
+import HeaderEn from '../../shared/components/navbar/navbar.en';
 
 const AdmissionEn = ({ history, width }: any): any => {
   const [loading, setLoading] = React.useState(true);
@@ -22,7 +20,6 @@ const AdmissionEn = ({ history, width }: any): any => {
       const res: { data: AdmissionModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/admission`);
       const res2: { data: Card[] } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/cards`);
       setData({ ...res.data, Cards: res2.data });
-      console.log({ ...res.data, Cards: res2.data });
     } catch (e) {
       console.log(e);
     } finally {
@@ -32,7 +29,7 @@ const AdmissionEn = ({ history, width }: any): any => {
 
   return (
     <div>
-      <HeaderEu history={history} path={"admission"} />
+      <HeaderEn history={history} path={"admission"} />
       {loading ? <Loading loading={loading} /> :
         <div className={styles.container}>
           <div className={styles.textContainer}>

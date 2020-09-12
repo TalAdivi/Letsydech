@@ -2,17 +2,13 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import Axios from 'axios';
 import styles from './home.module.scss';
-import Navbar from '../../shared/components/navbar';
-import Footer from '../../shared/components/footer';
-import Banner from './banner';
+import Banner from './banner/index';
 import Cards from './cards';
 import Donate from './donate';
-import Snippets from './snippets';
 import { HomePage } from '../../shared/models/homepage.model';
 import Loading from '../../shared/components/loading';
-import HeaderEu from '../../shared/components/navbar/navbar.en';
+import HeaderEn from '../../shared/components/navbar/navbar.en';
 import FooterEn from '../../shared/components/footer/index.en';
-import BannerEn from './banner/index copy';
 import SnippetsEn from './snippets/index.en';
 
 const HomeEn = ({ history }: any): any => {
@@ -33,16 +29,16 @@ const HomeEn = ({ history }: any): any => {
       setLoading(false);
     }
   };
-  
+
   return (
     <div>
       {loading ? <Loading loading={loading} /> :
         <div>
           <div>
-            <HeaderEu history={history} path={""}/>
+            <HeaderEn history={history} path={""} />
             <Grid className={styles.container} container spacing={2} justify='center'>
               <div className={styles.bg} style={{ backgroundImage: `url(${data?.TitleImage.url})` }} > </div>
-              <BannerEn primaryText={data?.TitleEn} secondaryText={data?.TitleTextEn} history={history} />
+              <Banner primaryText={data?.TitleEn} secondaryText={data?.TitleTextEn} history={history} buttonText={['Talk with us', 'Support us']} />
             </Grid>
             <Grid className={styles.content} container spacing={2} justify='center'>
               <SnippetsEn />
