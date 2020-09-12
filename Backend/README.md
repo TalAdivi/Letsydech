@@ -1,6 +1,6 @@
 # Letsydech Backend Server
 
-This is the content manager for [Letsydech website](letsydech.com).
+This is the content manager for [Letsydech website](https://letsydech-site.herokuapp.com/).
 
 The foundation requested a platform where they can manage their own content on the fly in an easy and intuitive way.
 

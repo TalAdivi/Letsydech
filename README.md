@@ -1,4 +1,4 @@
-# [Letsydech](letsydech.com)
+# [Letsydech](https://letsydech-site.herokuapp.com/)
 
 ![LetsydechIcon](https://res.cloudinary.com/dmezfnuzk/image/upload/v1597760165/ezgif_7_f1b10a22ec82_372ac500d4.png "LetsydechIcon")
 
