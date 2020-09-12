@@ -1,6 +1,7 @@
 import { Image } from './gallery.model';
 
 export interface Card {
+  id: string;
   Title: string;
   Text: string;
   TitleEn: string;

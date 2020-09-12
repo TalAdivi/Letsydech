@@ -33,7 +33,7 @@ const AboutUs = ({ history, width }: any): any => {
       arr.push(
         {
           original: image.url,
-          thumbnail: image.formats ? image.formats.thumbnail : image.url
+          thumbnail: image.formats ? image.formats.thumbnail.url : image.url
         });
     });
     return arr;

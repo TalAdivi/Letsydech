@@ -42,7 +42,7 @@ const AdmissionEn = ({ history, width }: any): any => {
           </div>
           <div className={styles.cardsContainer}>
             {data?.Cards.map((card: Card) =>
-              <div className={styles.card}>
+              <div key={card.id} className={styles.card}>
                 <h3>{card.TitleEn}</h3>
                 <ReactMarkdown source={card.TextEn} />
               </div>

@@ -43,7 +43,7 @@ const Admission = ({ history }: any): any => {
           </div>
           <div className={styles.cardsContainer}>
             {data?.Cards.map((card: any) =>
-              <div className={styles.card}>
+              <div key={card.id} className={styles.card}>
                 <h3>{card.Title}</h3>
                 <ReactMarkdown source={card.Text} />
               </div>
