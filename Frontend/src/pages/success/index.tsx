@@ -6,7 +6,7 @@ import Navbar from '../../shared/components/navbar';
 const Sucess = ({ history, location }: any) => {
   React.useEffect(() => {
     setTimeout(() => history.push('/'), 5000);
-  }, []);
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   console.log()
   return (

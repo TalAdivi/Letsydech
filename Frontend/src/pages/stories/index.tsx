@@ -17,23 +17,23 @@ const Stories = ({ history }: any): any => {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect((): any => {
+    const fetchData = async (): Promise<void> => {
+      try {
+        setLoading(true);
+        const res: { data: StoriesModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/stories`);
+        const res2: { data: StoryModel[] } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/blogs`);
+        res2.data.sort((a, b) => { return Date.parse(b.createdAt) - Date.parse(a.createdAt) });
+        setData(res.data);
+        setBlogs(spliceBlogs(res2.data));
+      } catch (e) {
+        console.log(e);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchData();
   }, []);
-
-  const fetchData = async (): Promise<void> => {
-    try {
-      setLoading(true);
-      const res: { data: StoriesModel } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/stories`);
-      const res2: { data: StoryModel[] } = await Axios.get(`${process.env.REACT_APP_BACKEND_URL}/blogs`);
-      res2.data.sort((a, b) => { return Date.parse(b.createdAt) - Date.parse(a.createdAt) });
-      setData(res.data);
-      setBlogs(spliceBlogs(res2.data));
-    } catch (e) {
-      console.log(e);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const spliceBlogs = (blogs: any): any => {
     if (!blogs) return null;

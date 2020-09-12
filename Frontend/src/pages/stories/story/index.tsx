@@ -14,7 +14,7 @@ const Story = ({ data }: { data: StoryModel }) => {
                     <h3>{data.Title}</h3>
                     <ReactMarkdown source={data.Text} />
                 </div>
-                {!data.Image ? null : <img className={styles.icon} src={data.Image.url} />}
+                {!data.Image ? null : <img className={styles.icon} src={data.Image.url} alt={data.Image.caption} />}
             </div>
         </div>
     )

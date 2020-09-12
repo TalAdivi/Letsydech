@@ -29,7 +29,7 @@ const ContactUs = ({ history }: any): any => {
   };
 
   const validate = (data: FormModel): boolean => {
-    if (data.name != '' && data.email != '' && data.phoneNumber != '' && data.freeText != '') return true;
+    if (data.name !== '' && data.email !== '' && data.phoneNumber !== '' && data.freeText !== '') return true;
     return false;
   };
 

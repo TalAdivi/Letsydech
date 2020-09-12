@@ -62,7 +62,7 @@ const AboutUs = ({ history, width }: any): any => {
                 <div className={styles.licenses}>
                   {data?.Licenses.map((license) =>
                     <div key={license.id} className={styles.imageHolder}>
-                      <a href={license.url} target='_black'><img src={license.url} /></a>
+                      <a href={license.url} target='_black'><img src={license.url} alt={license.caption} /></a>
                     </div>
                   )}
                 </div>
