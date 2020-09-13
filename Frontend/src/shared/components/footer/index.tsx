@@ -30,27 +30,27 @@ const Footer = ({ history }: any): any => {
           <p className={styles.subTitle}>{data?.Text}</p>
         </div>
         <div className={styles.pagesNav}>
-          <div className={styles.pageCard} onClick={() => history.push('/aboutus')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/aboutus'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>אודותינו</p>
             <p className={styles.innerSub}>קיראו עוד עלינו</p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/admission')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/admission'); window.scrollTo(0,0)} }>
             <p className={styles.innerTitle}>אישפוזית לנשים</p>
             <p className={styles.innerSub}>כל המדיע על תהליך האשפוז</p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/stories')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/stories'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>סיפורים</p>
             <p className={styles.innerSub}>חוויות אישיות </p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/gallery')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/gallery'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>גלריית תמונות</p>
             <p className={styles.innerSub}>צפו בגלריית התמונות שלנו</p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/donate')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/donate'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>תרומה</p>
             <p className={styles.innerSub}>בואו לתמוך בנו</p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/contactus')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/contactus'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>צרו קשר</p>
             <p className={styles.innerSub}>תיצרו איתנו קשר</p>
           </div>

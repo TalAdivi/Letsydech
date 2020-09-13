@@ -57,8 +57,8 @@ const Header = ({ history, path }: any): any => {
         <ListItemText className={styles.listItem} primary={'צרו קשר'} />
       </ListItem>
       <Divider />
-      <ListItem button key={'אנגלית'} onClick={() => history.push(`/en/${path}`)}>
-        <ListItemText className={styles.listItem} primary={'אנגלית'} />
+      <ListItem button key={'English'} onClick={() => history.push(`/en/${path}`)}>
+        <ListItemText className={styles.listItem} primary={'English'} />
       </ListItem>
     </List>
   );
@@ -84,7 +84,7 @@ const Header = ({ history, path }: any): any => {
                     <Tab label='גלריית תמונות' onClick={() => history.push('/gallery')} />
                     <Tab label='תרומות' onClick={() => history.push('/donate')} />
                     <Tab label='צרו קשר' onClick={() => history.push('/contactUs')} />
-                    <Tab label='אנגלית' onClick={() => history.push(`/en/${path}`)} />
+                    <Tab label='English' onClick={() => history.push(`/en/${path}`)} />
                   </div>
                 </Router>
               </div>

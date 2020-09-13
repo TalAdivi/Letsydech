@@ -29,23 +29,23 @@ const FooterEn = ({ history }: any): any => {
           <p className={styles.subTitle}>{data?.TextEn}</p>
         </div>
         <div className={styles.pagesNav}>
-          <div className={styles.pageCard} onClick={() => history.push('/en/aboutus')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/en/aboutus'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>About us</p>
             <p className={styles.innerSub}>Read more about us</p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/en/gallery')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/en/gallery'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>Gallery</p>
             <p className={styles.innerSub}>Look at our image gallery</p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/en/donate')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/en/donate'); window.scrollTo(0,0) }}>
             <p className={styles.innerTitle}>Donate</p>
             <p className={styles.innerSub}>Support us</p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/en/contactus')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/en/contactus'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>Contact us</p>
             <p className={styles.innerSub}>Where are here for you</p>
           </div>
-          <div className={styles.pageCard} onClick={() => history.push('/en/stories')}>
+          <div className={styles.pageCard} onClick={() => {history.push('/en/stories'); window.scrollTo(0,0)}}>
             <p className={styles.innerTitle}>Stories</p>
             <p className={styles.innerSub}>Personal experience</p>
           </div>
